@@ -1,4 +1,6 @@
 # Portfolio Website [Link Will Be Here](https://www.google.com "Portfolio Website")
+<img src="https://media.giphy.com/media/836HiJc7pgzy8iNXCn/giphy.gif" align="right"  width="45%"/>
+
 ## Tech Used 🛠  
 <p>
 <img src="https://img.shields.io/badge/-MongoDB%20-1AA121?style=for-the-badge&logo=mongodb&logoColor=green">
@@ -13,7 +15,7 @@
 <img src="https://img.shields.io/badge/-Threejs%20-grey?style=for-the-badge&logo=three.js">
 </p>  
 
-## Planning The App:  
+## Planning The App💡  
 - [x] Coming up with the idea 
 > Building a portfolio website that shows the journey of my professional life starting from college and for employers/others to view. This website is also a project for me to build a full-stack application using the MERN stack.
 
@@ -26,7 +28,7 @@
 - [ ] Plan endpoints (API, backend) and pages (Single page application, frontend)
 > In progress ⚙
 
-## Buiding the app/ Coding
+## Buiding The App/ Coding 💻
 - [ ] Navbar
 > Nav-link to all different pages 
 - [ ] Home page 

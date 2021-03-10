@@ -11,8 +11,10 @@
 
 ## Other technologies considered using 🔍  
 <p>
-<img src="https://img.shields.io/badge/-gatsby%20-white?style=for-the-badge&logo=gatsby&logoColor=purple">
-<img src="https://img.shields.io/badge/-Threejs%20-grey?style=for-the-badge&logo=three.js">
+<img src="https://img.shields.io/badge/-gatsby%20-black?style=for-the-badge&logo=gatsby&logoColor=purple">
+<img src="https://img.shields.io/badge/-Threejs%20-black?style=for-the-badge&logo=three.js">
+<img src="https://img.shields.io/badge/-Firebasae%20-black?style=for-the-badge&logo=firebase">
+<img src="https://img.shields.io/badge/-sass%20-black?style=for-the-badge&logo=sass">
 </p>  
 
 ## Planning The App💡  
@@ -30,17 +32,17 @@
 
 ## Buiding The App/ Coding 💻
 - [ ] Navbar
-> Nav-link to all different pages 
+> Nav-link to all different pages, toggle to switch website to light/dark mode (maybe)
 - [ ] Home page 
->  Social handles, mailto function, downloadable resume,  interactive
+>  Social handles, mailto function, downloadable resume,  interactive background/components
 - [ ] About page
 > Detailed introduction of myself, show skillsets and how familiar I am with a piece of technology from 1% to 100%
 - [ ] Education page
 > All my experiences in College and University, roles I have in clubs, competitions I took part in from school, modules I took for each semester  
 - [ ] Experience page
-> volunteer work I have done, hackathons I took part in, open-source porgrams I took part in, International competitions I took part in, Internships and in the future full-time roles
+> volunteer work I have done, hackathons I took part in, open-source porgrams I took part in, International competitions I took part in, Internships and in the future, full-time roles
 - [ ] Blog page
-> Blogs that I wrote. In this page, I am able to write a new blog easily (Auth needed), other users can like, comment and share to their social media.
+> Blogs that I wrote. In this page, I am able to write a new blog easily (Auth needed), other users can like, comment and share to their social media(Auth needed).
 - [ ] Projects page
 > Link to all the projects I have done, a search bar, a filter with technologies as tags. Each projects can have tags added for each technology.
 - [ ] Footer/Contact Me Section (Considering)

@@ -15,6 +15,7 @@
 <img src="https://img.shields.io/badge/-Threejs%20-black?style=for-the-badge&logo=three.js">
 <img src="https://img.shields.io/badge/-Firebasae%20-black?style=for-the-badge&logo=firebase">
 <img src="https://img.shields.io/badge/-sass%20-black?style=for-the-badge&logo=sass">
+  <img src="https://img.shields.io/badge/-mailchimp%20-black?style=for-the-badge&logo=mailchimp">
 </p>  
 
 ## Planning The App💡  
@@ -42,7 +43,7 @@
 - [ ] Experience page
 > volunteer work I have done, hackathons I took part in, open-source porgrams I took part in, International competitions I took part in, Internships and in the future, full-time roles
 - [ ] Blog page
-> Blogs that I wrote. In this page, I am able to write a new blog easily (Auth needed), other users can like, comment and share to their social media(Auth needed).
+> Blogs that I wrote. In this page, I am able to write a new blog easily (Auth needed), other users can like, comment and share to their social media(Auth needed), they can subscribe to newsletter(for latest blog post).
 - [ ] Projects page
 > Link to all the projects I have done, a search bar, a filter with technologies as tags. Each projects can have tags added for each technology.
 - [ ] Footer/Contact Me Section (Considering)

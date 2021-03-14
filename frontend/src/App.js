@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "../components/Navbar/Navbar";
-import Home from "../components/Home/Home";
-import Experience from "../components/Experience/Experience";
-import Education from "../components/Education/Education";
-import Projects from "../components/Projects/Projects";
-import About from "../components/About/About";
-import Blog from "../components/Blog/Blog"
+import Navbar from "./navbar/pages/Navbar";
+import Home from "./home/pages/Home";
+import Experience from "./experience/pages/Experience";
+import Education from "./education/pages/Education";
+import Projects from "./projects/pages/Projects";
+import About from "./about/pages/About";
+import Blog from "./blog/pages/Blog";
 
 class App extends Component {
   render() {
@@ -23,6 +23,7 @@ class App extends Component {
             <Route exact path="/Education" component={Education} />
             <Route exact path="/Projects" component={Projects} />
             <Route exact path="/Blog" component={Blog} />
+            <Redirect to="/" />
           </Switch>
         </Router>
       </Fragment>

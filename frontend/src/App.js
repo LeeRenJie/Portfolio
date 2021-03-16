@@ -9,6 +9,7 @@ import Education from "./education/pages/Education";
 import Projects from "./projects/pages/Projects";
 import About from "./about/pages/About";
 import Blog from "./blog/pages/Blog";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {
@@ -17,7 +18,7 @@ class App extends Component {
         <Router>
           <Navbar />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Home}/>
             <Route exact path="/About" component={About} />
             <Route exact path="/Experience" component={Experience} />
             <Route exact path="/Education" component={Education} />

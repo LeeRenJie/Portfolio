@@ -1,0 +1,17 @@
+.info-card{
+    position: absolute;
+    left: 50%;
+    width:40%;
+    height:60%;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.info-card-position {
+    position: relative;
+    left: -50%;
+    pointer-events: none;
+}

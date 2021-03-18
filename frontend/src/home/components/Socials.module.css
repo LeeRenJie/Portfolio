@@ -1,0 +1,71 @@
+.social-container {
+    position: absolute;
+    left: 50%;
+    z-index: 3;
+    margin-top: 500px;
+}
+
+.social-position {
+    position: relative;
+    left: -50%;
+}
+
+.social-link {
+    position: relative;
+    border: 1.5px solid #e4e4e4;
+    border-radius: 50%;
+    color: white;
+    display: inline-block;
+    height: 35px;
+    line-height: 33px;
+    margin: 0 16px;
+    text-align: center;
+    text-decoration: none;
+    width: 35px;
+}
+
+.social-link:hover {
+    background: black;
+    border: black;
+    cursor: pointer;
+    text-decoration: none;
+    transform: scale(1.5);
+}
+
+.social-link:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.social-animate1, .social-animate2, .social-animate3, .social-animate4 {
+    animation-name: bounce;
+    animation-duration: 1s;
+}
+
+.social-animate1 {
+    animation-delay: 0.25s;
+}
+
+.social-animate2 {
+    animation-delay: 0.5s;
+}
+
+.social-animate3 {
+    animation-delay: 0.75s;
+}
+
+.social-animate4 {
+    animation-delay: 1s;
+}
+
+@keyframes bounce {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 20px;
+    }
+    100% {
+        bottom: 0;
+    }
+}

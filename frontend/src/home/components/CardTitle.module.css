@@ -1,0 +1,11 @@
+.title {
+    pointer-events: none;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}

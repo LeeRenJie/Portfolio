@@ -1,0 +1,15 @@
+.typewriter { 
+    padding-top: 2.5rem; 
+    padding-bottom: 2.0rem;
+    margin: auto 0;
+    font-weight:normal;
+}
+
+.tw-div {
+    pointer-events: none;
+}
+
+.tw-span {
+    color: white;
+    font-weight: bold;
+}

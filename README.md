@@ -34,7 +34,7 @@
 ## Buiding The App/ Coding 💻
 - [ ] Navbar
 > Nav-link to all different pages, toggle to switch website to light/dark mode (maybe)
-- [ ] Home page 
+- [ ] Home page (50%) 
 >  Social handles, mailto function, downloadable resume,  interactive background/components
 - [ ] About page
 > Detailed introduction of myself, show skillsets and how familiar I am with a piece of technology from 1% to 100%
@@ -46,4 +46,8 @@
 > Blogs that I wrote. In this page, I am able to write a new blog easily (Auth needed), other users can like, comment and share to their social media(Auth needed), they can subscribe to newsletter(for latest blog post).
 - [ ] Projects page
 > Link to all the projects I have done, a search bar, a filter with technologies as tags. Each projects can have tags added for each technology.
-- [ ] Footer/Contact Me Section (Considering)
+
+## Pages:
+- Home page initial design
+<img src='https://github.com/LeeRenJie/LeeRenJie/blob/main/images/home.gif'/>
+

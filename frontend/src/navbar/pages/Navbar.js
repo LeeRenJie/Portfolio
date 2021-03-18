@@ -1,53 +1,98 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const toggleNav = () => setIsNavOpen(!isNavOpen);
+  const closeMobileMenu = () => setIsNavOpen(false);
+
   return (
     <Fragment>
-      <Container fluid>
-        <Row className={styles.navbar}>
-          <Col xs={6}>
-            <NavLink to="/" className={`${styles.link} ${styles.title}`}>
-              Lee Ren Jie 
-            </NavLink>
-          </Col>
-          <Col className={styles["nav-link"]}>
-            <NavLink to="/" className={`${styles.hoverable} ${styles.link}`}>
+      <nav className={styles["navbar-div"]}>
+        <div className={styles["menu-icon"]} onClick={toggleNav}>
+          <i className={isNavOpen ? "fas fa-times" : "fas fa-bars"}></i>
+        </div>
+        <NavLink
+          to="/"
+          className={styles.title}
+          onClick={closeMobileMenu}
+          exact={true}
+        >
+          Lee Ren Jie
+      </NavLink>
+        <ul
+          className={
+            isNavOpen
+              ? `${styles["nav-menu"]} ${styles["active"]}`
+              : styles["nav-menu"]
+          }
+        >
+          <li className={styles["nav-item"]}>
+            <NavLink
+              activeClassName={styles["active-link"]}
+              to="/"
+              className={styles["nav-links"]}
+              onClick={closeMobileMenu}
+              exact={true}
+            >
               Home
             </NavLink>
-          </Col>
-          <Col className={styles["nav-link"]}>
-            <NavLink to="/About" className={`${styles.hoverable} ${styles.link}`}>
-              About
+          </li>
+          <li className={styles["nav-item"]}>
+            <NavLink
+              activeClassName={styles["active-link"]}
+              to="/About"
+              className={styles["nav-links"]}
+              onClick={closeMobileMenu}
+            >
+              About 
             </NavLink>
-          </Col>
-          <Col className={styles["nav-link"]}>
-            <NavLink to="/Education" className={`${styles.hoverable} ${styles.link}`}>
+          </li>
+          <li className={styles["nav-item"]}>
+            <NavLink
+              activeClassName={styles["active-link"]}
+              to="/Education"
+              className={styles["nav-links"]}
+              onClick={closeMobileMenu}
+            >
               Education
             </NavLink>
-          </Col>
-          <Col className={styles["nav-link"]}>
-            <NavLink to="/Experience" className={`${styles.hoverable} ${styles.link}`}>
+          </li>
+          <li className={styles["nav-item"]}>
+            <NavLink
+              activeClassName={styles["active-link"]}
+              to="/Experience"
+              className={styles["nav-links"]}
+              onClick={closeMobileMenu}
+            >
               Experience
             </NavLink>
-          </Col>
-          <Col className={styles["nav-link"]}>
-            <NavLink to="/Projects" className={`${styles.hoverable} ${styles.link}`}>
+          </li>
+          <li className={styles["nav-item"]}>
+            <NavLink
+              activeClassName={styles["active-link"]}
+              to="/Projects"
+              className={styles["nav-links"]}
+              onClick={closeMobileMenu}
+            >
               Projects
             </NavLink>
-          </Col>
-          <Col className={styles["nav-link"]}>
-            <NavLink to="/Blog" className={`${styles.hoverable} ${styles.link}`}>
+          </li>
+          <li className={styles["nav-item"]}>
+            <NavLink
+              to="/Blog"
+              className={styles["nav-links"]}
+              onClick={closeMobileMenu}
+              activeClassName={styles["active-link"]}
+            >
               Blog
             </NavLink>
-          </Col>
-        </Row>
-      </Container>
+          </li>
+        </ul>
+      </nav>
     </Fragment>
+    
   );
 };
 

@@ -1,7 +1,7 @@
 const particlesConfig = {
   particles: {
     number: {
-      value: 100,
+      value: 250,
       density: {
         enable: true,
         value_area: 800,
@@ -12,13 +12,6 @@ const particlesConfig = {
     },
     shape: {
       type: "circle",
-      stroke: {
-        width: 0,
-        color: "#000000",
-      },
-      polygon: {
-        nb_sides: 5,
-      },
       image: {
         src: "img/github.svg",
         width: 100,
@@ -88,9 +81,9 @@ const particlesConfig = {
         },
       },
       bubble: {
-        distance: 279.84847624532586,
+        distance: 280,
         size: 5,
-        duration: 2.43346501082892,
+        duration: 2.5,
         opacity: 1,
         speed: 3,
       },

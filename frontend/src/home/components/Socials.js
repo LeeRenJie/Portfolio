@@ -33,6 +33,13 @@ const Socials = () => {
             href="https://web.facebook.com/RJ.Leee/">
                 <i className="fab fa-facebook-f"/>
                 </a>
+                <a 
+            className={`${styles["social-link"]}  ${styles["social-animate5"]}`} 
+            target="_blank" 
+            rel="noreferrer" 
+            href="mailto:work.renjie@gmail.com">
+                <i className="far fa-envelope"/>
+                </a>
                 </div>
         </div>
         )

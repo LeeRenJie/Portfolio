@@ -2,10 +2,17 @@
     pointer-events: none;
 }
 
+.name{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size:5vh;
+}
+
 .avatar {
     border-radius: 50%;
-    height: 250px;
-    width: 250px;
+    max-width: 100%;
+    height: 200px;
+    width: 200px;
     margin-top: 10px;
     margin-bottom: 25px;
 }

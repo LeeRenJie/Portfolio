@@ -13,7 +13,7 @@ const TypeWriter = () => {
 
   return (
     <div className={styles["tw-div"]}>
-      <h4 className={styles.typewriter}>
+      <h5 className={styles.typewriter}>
         I am {' '}
         <span className={styles['tw-span']}>
           <Typewriter
@@ -26,7 +26,7 @@ const TypeWriter = () => {
             words={allWords}
           />
         </span>
-      </h4>
+      </h5>
     </div>
   )
 }

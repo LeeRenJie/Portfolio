@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-import './ParticlesBack.css'
+import React from 'react';
+import styles from './ParticlesBack.module.css'
 
 import Particles from 'react-particles-js';
 import particlesConfig from '../../config/configParticles';
 
-class Background extends Component {
-    render(){
+const Background = () =>  {
         return (
-            <Particles id="particles" params={particlesConfig} />
+            <Particles className={styles.particles} params={particlesConfig} />
         )
-    }
 };
 
 export default Background;

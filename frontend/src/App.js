@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./navbar/pages/Navbar";
 import Home from "./home/pages/Home";
@@ -9,7 +8,7 @@ import Education from "./education/pages/Education";
 import Projects from "./projects/pages/Projects";
 import About from "./about/pages/About";
 import Blog from "./blog/pages/Blog";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {

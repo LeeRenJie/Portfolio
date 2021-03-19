@@ -1,17 +1,16 @@
+.card-container {
+    margin-top:50px;
+    position: static;
+    display: block;
+    pointer-events: none;
+    width: 100%;
+    padding: 0.1px;
+}
+
 .info-card{
-    position: absolute;
-    left: 50%;
-    width:40%;
-    height:60%;
-    border-radius: 25px;
+    position: relative;
     text-align: center;
     color: white;
     pointer-events: none;
-    z-index: 3;
-}
-
-.info-card-position {
-    position: relative;
-    left: -50%;
-    pointer-events: none;
+    z-index: 2;
 }

@@ -5,12 +5,11 @@ import TypeWriter from './TypeWriter'
 
 const InfoCard = () => {
     return(
-
-    <div className={styles['info-card']}>
-    <div className={styles['info-card-position']}>
-        <CardTitle/>
-        <TypeWriter/>
-    </div>
+    <div className={styles['card-container']}>
+        <div className={styles['info-card']}>
+            <CardTitle/>
+            <TypeWriter/>
+        </div>
     </div>
             )
 }

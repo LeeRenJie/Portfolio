@@ -19,7 +19,15 @@ const Navbar = () => {
           onClick={closeMobileMenu}
           exact={true}
         >
-          Lee Ren Jie
+            <div className={styles.animate1}>L</div>
+            <div className={styles.animate2}>e</div>
+            <div className={styles.animate3}>e</div>
+            <div className={styles.animate4}>R</div>
+            <div className={styles.animate5}>e</div>
+            <div className={styles.animate6}>n</div>
+            <div className={styles.animate7}>J</div>
+            <div className={styles.animate8}>i</div>
+            <div className={styles.animate9}>e</div>
       </NavLink>
         <ul
           className={

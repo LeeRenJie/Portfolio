@@ -8,6 +8,7 @@ import Education from "./education/pages/Education";
 import Projects from "./projects/pages/Projects";
 import About from "./about/pages/About";
 import Blog from "./blog/pages/Blog";
+import Resume from "./shared/components/Resume/Resume";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
       <Fragment>
         <Router>
           <Navbar />
+          <Resume/>
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/About" component={About} />

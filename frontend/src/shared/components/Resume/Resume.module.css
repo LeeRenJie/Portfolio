@@ -1,0 +1,27 @@
+.resume {
+    bottom: 10px;
+    right: 10px;
+    padding: 0 10px;
+    width:max-content;
+    height:max-content;
+    position:fixed;
+    z-index:3;
+    border-radius:5px;
+    line-height:50px;
+    text-align:center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s ease 0s;
+    background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
+    opacity: 0.8;
+}
+
+.resume:hover {
+    color: white;
+    opacity: 0.99;
+    transform: scale(1.05);
+}
+
+.icon {
+    margin-right:10px;
+}

@@ -4,7 +4,6 @@ import  styles from './Socials.module.css'
 const Socials = () => {
     return(
         <div className={styles["social-container"]}>
-            <div className={styles["social-position"]}>
             <a 
             className={`${styles["social-link"]}  ${styles["social-animate1"]}`} 
             target="_blank" 
@@ -40,7 +39,6 @@ const Socials = () => {
             href="mailto:work.renjie@gmail.com">
                 <i className="far fa-envelope"/>
                 </a>
-                </div>
         </div>
         )
 };

@@ -3,16 +3,20 @@
 }
 
 .name{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size:5vh;
+    font-size:8vh;
+}
+
+.intro{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
 .avatar {
     border-radius: 50%;
     max-width: 100%;
-    height: 200px;
-    width: 200px;
-    margin-top: 10px;
-    margin-bottom: 25px;
+    height: 220px;
+    width: 220px;
+    margin-bottom: 1rem;
 }

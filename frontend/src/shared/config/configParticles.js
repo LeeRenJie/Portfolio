@@ -8,7 +8,7 @@ const particlesConfig = {
       },
     },
     color: {
-      value: "#fff",
+      value: "rgb(106, 152, 180)",
     },
     shape: {
       type: "circle",
@@ -19,7 +19,7 @@ const particlesConfig = {
       },
     },
     opacity: {
-      value: 0.5,
+      value: 1,
       random: true,
       anim: {
         enable: false,

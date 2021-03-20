@@ -9,16 +9,17 @@
     position: relative;
     z-index: 3;
     border-radius: 50%;
-    color:white;
+    color:black;
     display: inline-block;
-    height: 30px;    
-    line-height: 27px;
+    height: 35px;    
+    line-height: 35px;
     margin: 0 10px;
     text-align: center;
     text-decoration: none;
-    width: 30px;
+    width: 35px;
     transition: 0.1s;
     transition-delay: 0.05s;
+    background-color:white;
 }
 
 .social-link:hover {

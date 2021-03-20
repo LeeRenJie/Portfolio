@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CardTitle.module.css'
-import splash from "./Splash.jpg"
+import splash from "../../images/Splash.jpg"
 
 const CardTitle = () => {
     return(

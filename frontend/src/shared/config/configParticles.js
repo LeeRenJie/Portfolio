@@ -1,14 +1,14 @@
 const particlesConfig = {
   particles: {
     number: {
-      value: 250,
+      value: 100,
       density: {
         enable: true,
         value_area: 800,
       },
     },
     color: {
-      value: "rgb(106, 152, 180)",
+      value: "rgb(106, 152, 200)",
     },
     shape: {
       type: "circle",

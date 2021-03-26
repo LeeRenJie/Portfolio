@@ -31,29 +31,37 @@
     transform: scale(1.2);
 }
 
-.social-animate1, .social-animate2, .social-animate3, .social-animate4, .social-animate5 {
+.social-animate1, .social-animate2, .social-animate3, .social-animate4, .social-animate5, .social-animate6, .social-animate7 {
     animation-name: bounce;
-    animation-duration: 1s;
+    animation-duration: 1.05s;
 }
 
 .social-animate1 {
-    animation-delay: 0.2s;
+    animation-delay: 0.15s;
 }
 
 .social-animate2 {
-    animation-delay: 0.4s;
+    animation-delay: 0.3s;
 }
 
 .social-animate3 {
-    animation-delay: 0.6s;
+    animation-delay: 0.45s;
 }
 
 .social-animate4 {
-    animation-delay: 0.8s;
+    animation-delay: 0.6s;
 }
 
 .social-animate5 {
-    animation-delay: 1s;
+    animation-delay: 0.75s;
+}
+
+.social-animate6 {
+    animation-delay: 0.9s;
+}
+
+.social-animate7 {
+    animation-delay: 1.05s;
 }
 
 @keyframes bounce {

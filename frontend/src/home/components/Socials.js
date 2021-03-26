@@ -29,11 +29,25 @@ const Socials = () => {
             className={`${styles["social-link"]}  ${styles["social-animate4"]}`} 
             target="_blank" 
             rel="noreferrer" 
-            href="https://web.facebook.com/RJ.Leee/">
-                <i className="fab fa-facebook-f"/>
+            href="https://twitter.com/TechWithRJ2">
+                <i className="fab fa-twitter"/>
                 </a>
                 <a 
             className={`${styles["social-link"]}  ${styles["social-animate5"]}`} 
+            target="_blank" 
+            rel="noreferrer" 
+            href="https://dev.to/leerenjie">
+                <i className="fab fa-dev"/>
+                </a>
+                <a 
+            className={`${styles["social-link"]}  ${styles["social-animate6"]}`} 
+            target="_blank" 
+            rel="noreferrer" 
+            href="https://tech-with-rj.medium.com/">
+                <i className="fab fa-medium-m"/>
+                </a>
+                <a 
+            className={`${styles["social-link"]}  ${styles["social-animate7"]}`} 
             target="_blank" 
             rel="noreferrer" 
             href="mailto:work.renjie@gmail.com">

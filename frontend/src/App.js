@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./navbar/pages/Navbar";
+import Navbar from "./shared//components/Navbar/Navbar";
 import Home from "./home/pages/Home";
 import Experience from "./experience/pages/Experience";
 import Education from "./education/pages/Education";

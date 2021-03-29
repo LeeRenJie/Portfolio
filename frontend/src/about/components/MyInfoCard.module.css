@@ -1,6 +1,8 @@
 /* Avatar related */
 .avatar-container {
     display: inline-block;
+    margin-left: 10%;
+    margin-right: 3%;
 }
 
 .avatar {
@@ -16,4 +18,29 @@
     display: inline-block;
     width: 60%;
     height: 100%;
+}
+
+.about-info {
+    font-family: "Nunito", sans-serif;
+}
+
+@media screen and (max-width: 860px) {
+    .avatar-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .info-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+        padding: 0 20%;
+        height: 100%;
+        width: 100%;
+    }
 }

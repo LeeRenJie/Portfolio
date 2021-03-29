@@ -9,6 +9,7 @@ const Home = () => {
             <ParticlesBack/>
             <InfoCard/>
             <Socials/>
+    
         </>
         )
 };

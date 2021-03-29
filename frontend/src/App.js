@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./shared//components/Navbar/Navbar";
 import Home from "./home/pages/Home";
 import Experience from "./experience/pages/Experience";
-import Education from "./education/pages/Education";
 import Projects from "./projects/pages/Projects";
 import About from "./about/pages/About";
 import Blog from "./blog/pages/Blog";
@@ -22,7 +21,6 @@ class App extends Component {
             <Route exact path="/" component={Home}/>
             <Route exact path="/about" component={About} />
             <Route exact path="/experience" component={Experience} />
-            <Route exact path="/education" component={Education} />
             <Route exact path="/projects" component={Projects} />
             <Route exact path="/blog" component={Blog} />
             <Redirect to="/" />

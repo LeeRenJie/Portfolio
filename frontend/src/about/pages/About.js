@@ -1,10 +1,14 @@
 import React from 'react';
+import Education from '../components/Education'
+import MyInfo from '../components/MyInfo'
 
 const About = () => {
     return(
-        <div>
-            <h1>About</h1>
-        </div>)
+        <>
+            <MyInfo/>
+            <Education/>
+        </>
+        )
 }
 
 export default About;

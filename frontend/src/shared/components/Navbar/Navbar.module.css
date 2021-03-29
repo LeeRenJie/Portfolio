@@ -1,7 +1,7 @@
 /*Title styles */
 .title {
   position: relative;
-  right:420px;
+  right:520px;
   text-decoration: none;
   color: white;
   font-family: 'Cedarville Cursive', cursive;
@@ -110,7 +110,7 @@
 /* Navbar styles */
 
 .navbar-div {
-  background: #0D1117;
+  background: #232323;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,6 +149,7 @@
   -ms-flex-align: center;
   align-items: center;
   height: 60px;
+  cursor: pointer;
 }
 
 .nav-links {

@@ -9,9 +9,9 @@
     position: relative;
     z-index: 3;
     border-radius: 50%;
-    color:black;
+    color: black;
     display: inline-block;
-    height: 35px;    
+    height: 35px;
     line-height: 35px;
     margin: 0 10px;
     text-align: center;
@@ -19,7 +19,7 @@
     width: 35px;
     transition: 0.1s;
     transition-delay: 0.05s;
-    background-color:white;
+    background-color: white;
 }
 
 .social-link:hover {
@@ -31,7 +31,13 @@
     transform: scale(1.2);
 }
 
-.social-animate1, .social-animate2, .social-animate3, .social-animate4, .social-animate5, .social-animate6, .social-animate7 {
+.social-animate1,
+.social-animate2,
+.social-animate3,
+.social-animate4,
+.social-animate5,
+.social-animate6,
+.social-animate7 {
     animation-name: bounce;
     animation-duration: 1.05s;
 }
@@ -68,10 +74,20 @@
     0% {
         bottom: 0;
     }
+
     50% {
         bottom: 10px;
     }
+
     100% {
         bottom: 0;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .social-link {
+        height: 30px;
+        line-height: 30px;
+        width: 30px;
     }
 }

@@ -1,7 +1,10 @@
 .title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 200px;
     background-color: #191919;
     color:white;

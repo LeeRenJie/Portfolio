@@ -25,7 +25,6 @@
 .social-link:hover {
     color: white;
     background: black;
-    border-color: black;
     cursor: pointer;
     text-decoration: none;
     transform: scale(1.2);

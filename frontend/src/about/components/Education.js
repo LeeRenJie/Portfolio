@@ -1,12 +1,12 @@
 import React from 'react';
 import Timeline from './Timeline'
-import styles from './Education.module.css'
+import style from '../../shared/styles/Title.module.scss'
 
 const Education = () => {
     return(
         <>
-            <div>
-                <h1 className={styles.title}>
+            <div className={style['title-container']}>
+                <h1 className={style.title}>
                 My Education Pathway
                 </h1>
             </div>

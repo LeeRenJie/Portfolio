@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Timeline.module.css";
 import { Chrono } from "react-chrono";
-import data from "./data";
+import data from "./timelineData";
 import useWindowSize from "../../shared/util/windowSize"
 
 const Timeline = () => {
@@ -16,6 +16,7 @@ const Timeline = () => {
         mode={size.width <= 850 ? smallScreenMode : bigScreenMode} 
         hideControls 
         theme={{
+          primary: "blue", 
           secondary: "#E6E8FA", 
           }}/>
       </div>

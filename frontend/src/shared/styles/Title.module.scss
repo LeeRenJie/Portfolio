@@ -1,0 +1,27 @@
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;    
+    color: white;
+    margin: 0;
+}
+
+.title:hover {
+    transform: scale(1.02);
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 250px;
+    background-color: #191919;
+    font-size: 10vw;
+    animation: glow 2s 1s linear infinite ;
+
+    @keyframes glow {
+        50% {
+            text-shadow: 0 0 25px #00EFEE;
+        }
+    }
+}

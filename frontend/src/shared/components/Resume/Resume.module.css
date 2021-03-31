@@ -17,6 +17,7 @@
 }
 
 .resume:hover {
+    transition-delay: 0.08s;
     color: white;
     opacity: 0.99;
     transform: scale(1.05);

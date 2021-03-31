@@ -19,7 +19,7 @@
     width: 35px;
     transition: 0.1s;
     transition-delay: 0.05s;
-    background-color: white;
+    background:white;
 }
 
 .social-link:hover {

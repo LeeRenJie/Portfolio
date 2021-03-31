@@ -1,6 +1,6 @@
 import React from 'react';
-import Timeline from './Timeline'
-import style from '../../shared/styles/Title.module.scss'
+import Timeline from '../Timeline/Timeline'
+import style from '../../../shared/styles/Title.module.scss'
 
 const Education = () => {
     return(

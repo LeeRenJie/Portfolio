@@ -1,0 +1,11 @@
+.hobbies-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 5% 14.5% 0;
+}

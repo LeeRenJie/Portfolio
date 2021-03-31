@@ -9,7 +9,9 @@ const TypeWriter = () => {
   'a Student.', 
   'a Web Developer.', 
   'an AI Enthusiast.', 
-  'an Open Source Contributor.']
+  'an Open Source Contributor.',
+  'a blogger.'
+]
 
   return (
     <div className={styles["tw-div"]}>

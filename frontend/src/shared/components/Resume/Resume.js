@@ -6,7 +6,8 @@ const Resume = () => {
             <a 
             className={styles.resume} 
             href="resume.pdf"
-            download>
+            target="_blank"
+            >
                 <i className={`fas fa-download ${styles.icon}`}/>
                 Resume
             </a>

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Timeline.module.css";
 import { Chrono } from "react-chrono";
 import data from "./timelineData";
-import useWindowSize from "../../shared/hooks/windowSize"
+import useWindowSize from "../../../shared/hooks/windowSize"
 
 const Timeline = () => {
   const size = useWindowSize();

@@ -1,7 +1,7 @@
 import React from 'react';
-import Education from '../components/Education'
-import MyInfo from '../components/MyInfo'
-import Skills from  '../components/Skills'
+import Education from '../components/Education/Education'
+import MyInfo from '../components/MyInfo/MyInfo'
+import Skills from  '../components/Skills/Skills'
 // import Footer from "../../shared/components/Footer/Footer"
 
 const About = () => {

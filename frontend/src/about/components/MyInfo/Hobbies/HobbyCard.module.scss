@@ -1,0 +1,32 @@
+.hobbies-card {
+    margin: 10px;
+    flex: 1 1 200px;
+    max-width: 300px;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #303030;
+    box-shadow: rgb(35, 35, 35 / 5%) 0px 5px 10px;
+    border-radius: 10px;
+}
+
+.card-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
+    color: rgb(248, 248, 248);
+}
+
+.card-title {
+    color: #fff;
+}
+
+.card-text {
+    color: #fff;
+}

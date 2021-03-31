@@ -1,12 +1,12 @@
 /*Title styles */
 .title {
   position: relative;
-  right:520px;
+  right:500px;
   text-decoration: none;
   color: white;
   font-family: 'Cedarville Cursive', cursive;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 35px;
   opacity: 0.9;
 }
 

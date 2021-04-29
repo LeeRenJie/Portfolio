@@ -54,7 +54,7 @@ const Navbar = () => {
               className={styles["nav-links"]}
               onClick={closeMobileMenu}
             >
-              About 
+              About
             </NavLink>
           </li>
           <li className={styles["nav-item"]}>
@@ -90,7 +90,7 @@ const Navbar = () => {
         </ul>
       </nav>
     </Fragment>
-    
+
   );
 };
 

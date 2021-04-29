@@ -49,5 +49,5 @@
 
 ## Pages:
 - Home page initial design
-<img src='https://github.com/LeeRenJie/LeeRenJie/blob/main/images/home.gif'/>
+<img src='https://github.com/LeeRenJie/LeeRenJie/blob/main/images/homepage.gif'/>
 

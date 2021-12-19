@@ -16,7 +16,7 @@
 
 ## Planning The App💡  
 - [x] Coming up with the idea 
-> Building a portfolio website that shows the journey of my professional life starting from college and for employers/others to view. This website is also a project for me to build a full-stack application using the MERN stack.
+> Building a portfolio website that shows the journey of my professional life starting from college and for employers/others to view. This website is also a project for me to build a website with React.JS
 
 - [ ] Create a design/sketch/wireframe
 > In progress ⚙

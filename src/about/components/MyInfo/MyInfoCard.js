@@ -6,12 +6,12 @@ const aboutInfo = "Sed lobortis dignissim convallis. Nullam porttitor scelerisqu
 const MyInfoCard = () => {
     return(
         <div>
-        <div className={styles["styled-div"]} /> 
+        <div className={styles["styled-div"]} />
             <div className={styles["about-container"]}>
                 <div className={styles["avatar-container"]}>
-                    <img className={styles.avatar} src="images/splash.jpg" alt="Avatar"/>
+                    <img className={styles.avatar} src="../../../../public/images/Splash.jpg" alt="Avatar"/>
                 </div>
-                    <p className={styles["about-info"]}> 
+                    <p className={styles["about-info"]}>
                     {aboutInfo}
                     </p>
             </div>

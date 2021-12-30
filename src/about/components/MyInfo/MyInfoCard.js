@@ -9,7 +9,7 @@ const MyInfoCard = () => {
         <div className={styles["styled-div"]} />
             <div className={styles["about-container"]}>
                 <div className={styles["avatar-container"]}>
-                    <img className={styles.avatar} src="../../../../public/images/Splash.jpg" alt="Avatar"/>
+                    <img className={styles.avatar} src={process.env.PUBLIC_URL + "/images/Splash.jpg"} alt="Avatar"/>
                 </div>
                     <p className={styles["about-info"]}>
                     {aboutInfo}

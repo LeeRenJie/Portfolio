@@ -11,13 +11,16 @@ const Timeline = () => {
 
   return (
       <div className={styles.timeline}>
-        <Chrono 
-        items={data} 
-        mode={size.width <= 850 ? smallScreenMode : bigScreenMode} 
-        hideControls 
-        theme={{
-          secondary: "#E6E8FA", 
-          }}/>
+        <Chrono
+          items={data}
+          mode={size.width <= 850 ? smallScreenMode : bigScreenMode}
+          hideControls
+          theme={{
+            secondary: "#E6E8FA",
+            cardBgColor: "#d0d0d0",
+            titleColor: "#fff",
+          }}
+        />
       </div>
   );
 };

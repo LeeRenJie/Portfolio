@@ -10,7 +10,7 @@ const Education = () => {
                 My Education Pathway
                 </h1>
             </div>
-            <Timeline />
+            <Timeline/>
         </>
         )
 }

@@ -14,16 +14,16 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Navbar />
           <Resume/>
           <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/about" component={About} />
-            <Route exact path="/experience" component={Experience} />
-            <Route exact path="/projects" component={Projects} />
-            <Route exact path="/blog" component={Blog} />
-            <Redirect to="/" />
+            <Route exact path="/portfolio" component={Home}/>
+            <Route exact path="/portfolio/about" component={About} />
+            <Route exact path="/portfolio/experience" component={Experience} />
+            <Route exact path="/portfolio/projects" component={Projects} />
+            <Route exact path="/portfolio/blog" component={Blog} />
+            <Redirect to="/portfolio" />
           </Switch>
         </Router>
       </Fragment>

@@ -8,13 +8,12 @@ import Projects from "./projects/pages/Projects";
 import About from "./about/pages/About";
 import Blog from "./blog/pages/Blog";
 import Resume from "./shared/components/Resume/Resume";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {
     return (
       <Fragment>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
           <Navbar />
           <Resume/>
           <Switch>

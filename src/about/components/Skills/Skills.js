@@ -6,7 +6,7 @@ const Skills = () => {
     return(
         <div className={style['title-container']}>
             <h1 className={style.title}>
-            My Skillsets
+                My Skillsets
             </h1>
         </div>
 

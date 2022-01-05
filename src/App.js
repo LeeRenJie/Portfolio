@@ -13,16 +13,16 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Router>
+        <Router basename="/Portfolio">
           <Navbar />
           <Resume/>
           <Switch>
-            <Route exact path="/Portfolio" component={Home}/>
-            <Route exact path="/Portfolio/about" component={About} />
-            <Route exact path="/Portfolio/experience" component={Experience} />
-            <Route exact path="/Portfolio/projects" component={Projects} />
-            <Route exact path="/Portfolio/blog" component={Blog} />
-            <Redirect to="/Portfolio" />
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/about" component={About} />
+            <Route exact path="/experience" component={Experience} />
+            <Route exact path="/projects" component={Projects} />
+            <Route exact path="/blog" component={Blog} />
+            <Redirect to="/" />
           </Switch>
         </Router>
       </Fragment>

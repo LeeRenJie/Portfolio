@@ -39,7 +39,7 @@ const Navbar = () => {
           <li className={styles["nav-item"]}>
             <NavLink
               activeClassName={styles["active-link"]}
-              to="/portfolio"
+              to="/Portfolio"
               className={styles["nav-links"]}
               onClick={closeMobileMenu}
               exact={true}
@@ -50,7 +50,7 @@ const Navbar = () => {
           <li className={styles["nav-item"]}>
             <NavLink
               activeClassName={styles["active-link"]}
-              to="/portfolio/about"
+              to="/Portfolio/about"
               className={styles["nav-links"]}
               onClick={closeMobileMenu}
             >
@@ -60,7 +60,7 @@ const Navbar = () => {
           <li className={styles["nav-item"]}>
             <NavLink
               activeClassName={styles["active-link"]}
-              to="/portfolio/experience"
+              to="/Portfolio/experience"
               className={styles["nav-links"]}
               onClick={closeMobileMenu}
             >
@@ -70,7 +70,7 @@ const Navbar = () => {
           <li className={styles["nav-item"]}>
             <NavLink
               activeClassName={styles["active-link"]}
-              to="/portfolio/projects"
+              to="/Portfolio/projects"
               className={styles["nav-links"]}
               onClick={closeMobileMenu}
             >
@@ -79,7 +79,7 @@ const Navbar = () => {
           </li>
           <li className={styles["nav-item"]}>
             <NavLink
-              to="/portfolio/blog"
+              to="/Portfolio/blog"
               className={styles["nav-links"]}
               onClick={closeMobileMenu}
               activeClassName={styles["active-link"]}

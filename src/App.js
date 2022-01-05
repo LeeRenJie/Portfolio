@@ -17,12 +17,12 @@ class App extends Component {
           <Navbar />
           <Resume/>
           <Switch>
-            <Route exact path="/portfolio" component={Home}/>
-            <Route exact path="/portfolio/about" component={About} />
-            <Route exact path="/portfolio/experience" component={Experience} />
-            <Route exact path="/portfolio/projects" component={Projects} />
-            <Route exact path="/portfolio/blog" component={Blog} />
-            <Redirect to="/portfolio" />
+            <Route exact path="/Portfolio" component={Home}/>
+            <Route exact path="/Portfolio/about" component={About} />
+            <Route exact path="/Portfolio/experience" component={Experience} />
+            <Route exact path="/Portfolio/projects" component={Projects} />
+            <Route exact path="/Portfolio/blog" component={Blog} />
+            <Redirect to="/Portfolio" />
           </Switch>
         </Router>
       </Fragment>

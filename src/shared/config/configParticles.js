@@ -320,7 +320,7 @@ const particlesConfig = {
       },
       "random": false,
       "size": false,
-      "speed": 6,
+      "speed": 2,
       "spin": {
         "acceleration": 0,
         "enable": false

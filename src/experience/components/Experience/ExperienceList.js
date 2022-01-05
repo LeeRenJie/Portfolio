@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./Timeline.module.css";
+import styles from "./Experience.module.css";
 import { Chrono } from "react-chrono";
-import data from "./timelineData";
+import history from "./ExperienceHistory";
 import useWindowSize from "../../../shared/hooks/windowSize"
 
-const Timeline = () => {
+const ExperienceList = () => {
   const size = useWindowSize();
   const bigScreenMode = "VERTICAL_ALTERNATING";
   const smallScreenMode = "VERTICAL";
@@ -12,7 +12,7 @@ const Timeline = () => {
   return (
       <div className={styles.timeline}>
         <Chrono
-          items={data}
+          items={history}
           mode={size.width <= 850 ? smallScreenMode : bigScreenMode}
           hideControls
           theme={{
@@ -25,4 +25,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline;
+export default ExperienceList;

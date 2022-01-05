@@ -6,7 +6,7 @@ import Skills from  '../components/Skills/Skills'
 
 const About = () => {
     return(
-        <div>
+        <div style={{ backgroundColor: "#232323" }}>
             <MyInfo/>
             <Skills/>
             <Education/>

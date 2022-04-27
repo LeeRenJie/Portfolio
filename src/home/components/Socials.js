@@ -26,7 +26,7 @@ const Socials = () => {
                 className={`${styles["social-link"]} ${styles["social-animate3"]}`}
                 target="_blank"
                 rel="noreferrer"
-                href="https://stackoverflow.com/users/story/14742922"
+                href="https://stackoverflow.com/users/14742922/lee-ren-jie"
                 >
                 <i className="fab fa-stack-overflow"/>
             </a>

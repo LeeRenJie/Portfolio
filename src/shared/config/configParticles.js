@@ -68,7 +68,7 @@ const particlesConfig = {
         "duration": 2.5,
         "mix": false,
         "opacity": 1,
-        "size": 5
+        "size": 1
       },
       "connect": {
         "distance": 80,

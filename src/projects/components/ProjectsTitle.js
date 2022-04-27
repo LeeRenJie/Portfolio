@@ -8,7 +8,6 @@ const ProjectsTitle = () => {
             Projects
             </h1>
         </div>
-
         )
 }
 

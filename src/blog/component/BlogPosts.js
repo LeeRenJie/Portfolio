@@ -58,13 +58,3 @@ class BlogPosts extends React.Component {
 }
 
 export default BlogPosts;
-
-{/* <Circles />
-<Grid />
-<Hearts />
-<Oval />
-<Puff />
-<Rings />
-<SpinningCircles />
-<TailSpin />
-<ThreeDots /> */}

@@ -48,7 +48,7 @@ class BlogPosts extends React.Component {
     return (
       <div className="blog-container">
         {this.state.posts.map((post, index) => (
-          <a className="card-link" key={index} href={`https://leerenjie.hashnode.dev/${post.slug}`} >
+          <a className="card-link" key={index} href={`https://leerenjie.hashnode.dev/${post.slug}`} target="_blank" rel="noopener noreferrer">
             <Post post={post} />
           </a>
         ))}

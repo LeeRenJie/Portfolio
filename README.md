@@ -46,7 +46,7 @@
 - Home page initial design
 <img src='https://github.com/LeeRenJie/LeeRenJie/blob/main/images/homepage.gif'/>
 
-### References:
+## References:
 - [Pushing to production](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f)
 - [Displaying Blog in React with Hashnode API](https://blog.rutikwankhade.dev/adding-your-blogs-on-a-portfolio-with-react-and-hashnode-api)
 

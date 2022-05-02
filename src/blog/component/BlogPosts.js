@@ -38,7 +38,7 @@ class BlogPosts extends React.Component {
     })
     const ApiResponse = await response.json();
 
-    console.log(ApiResponse.data.user.publication.posts);
+    // console.log(ApiResponse.data.user.publication.posts);
     this.setState({ posts: ApiResponse.data.user.publication.posts, loading: false });
   };
 

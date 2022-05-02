@@ -1,0 +1,17 @@
+.project-container {
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  margin:auto;
+  padding-top: 50px;
+  justify-content:center;
+  max-width: 1000px;
+  column-gap: 70px;
+  row-gap: 20px;
+}
+
+.project-link:hover {
+  transform: scale(1.01);
+  color: #5969BA;
+  cursor:pointer;
+}

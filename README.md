@@ -33,10 +33,10 @@
 - [x] Home page
 >  Social handles, mailto function, downloadable resume across all pages,  interactive background/components (typewriter effect)
 - [ ] About page (60%)
-> Detailed introduction of myself, show skillsets and all my experiences in my tertiary education.
-- [ ] Experience page (30%)
+> Detailed introduction of myself, show skillsets and all my educations.
+- [ ] Experience page (80%)
 > volunteer work I have done, hackathons I took part in, open-source porgrams I took part in, International competitions I took part in, Internships and in the future, full-time roles
-- [ ] Projects page (10%)
+- [ ] Projects page (50%)
 > Link to all the projects I have done, a search bar, a filter with technologies as tags. Each projects can have tags added for each technology.
 - [x] Blog page
 > Dispaly latest 6 blogs that I wrote and open a new tab for the user to read my blog post if they click on it.

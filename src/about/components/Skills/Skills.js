@@ -8,6 +8,7 @@ const Skills = () => {
             <h1 className={style.title}>
                 My Skillsets
             </h1>
+
         </div>
 
         )

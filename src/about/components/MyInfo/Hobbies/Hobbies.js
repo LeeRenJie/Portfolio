@@ -6,7 +6,7 @@ const Hobbies = () => {
 	const HOBBIES = [
 		{
 			id: 'h1',
-			title: "FrontEnd",
+			title: "Web Dev",
 			icon: <i className={`fas fa-desktop ${styles.icon}`}></i>,
 			text:  "I love making websites because it challenges my creativity."
 		},

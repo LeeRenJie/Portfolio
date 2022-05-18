@@ -11,7 +11,7 @@ const ProjectList = props => {
             key={project.id}
             id={project.id}
             tech = {project.tech}
-            image={project.icon}
+            image={project.image}
             title={project.title}
             desc={project.desc}
           />

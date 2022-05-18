@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectList from './ProjectList'
 // Add tags: https://dev.to/prvnbist/create-a-tags-input-component-in-reactjs-ki
+// Filter tags: https://codepen.io/nregard/pen/KGbvoG
 
 const Projects = () => {
   const PROJECTS = [

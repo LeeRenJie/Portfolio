@@ -6,27 +6,32 @@ const [chs1, chs2, chs3, chs4]  = [
 ]
 
 const [apu1, apu2, apu3, apu4, apu5, apu6, apu7, apu8] = [
-    "I joined the Developer Student Club of APU (DSC)",
-    "Helped in Three fundraising events that succesfully raised over RM10 000.",
-    "Modules in the 1st semester includes English For Academic Purposes, Fundementals Of Entrepreneurship, Malaysian Studies, Managing Business, Practical IT Skills, and Academic Research Skills. I had a 3.83 GPA",
-    "Modules in the 2nd semester includes CoCurricular Module, Discrete Maths, Information System, Academic Research Skills, and Professional Communications. I had a 4.0 GPA",
-    "I am currently in the 3rd semester with modules including Computer System Architecture, Database System, Environmental Issues in Malaysia, Operating System, and Programming with Python.",
-    "4th semester's modules include Introduction to Software Engineering, Networks and Networking, Numerical Methods, System Analysis & Design, and Web Development.",
-    "5th semester's modules include Digital Security & Forensic, Introduction to Artificial Intelligent, Java Programming, and a Software Development Project.",
-    "During the 6th semester I will be sent for industrial training through an internship."
+    "Overall CGPA: 3.79.",
+    "I joined the Student Developer Society (SDS) of APU in the development team.",
+    "Helped APUSDS in their Git and UI/UX workshop.",
+    "Pioneer Member of Integrated Sustainability & Urban Creativity Centre (ISUC) Student Chapter of APU.",
+    "Helped in Three fundraising events that succesfully raised over RM10 000 with ISUC Student Chapter as the head of sales.",
+    "Built projects for assignments such as a pet store website for my web dev module, Python CLI Car Rental System for my python module, and a Judging System Website (HTML, CSS, PHP) for my final Diploma project.",
+    "Went to my first internship as a web developer apprentice.",
+    "Successfully graduated and continued in a CS degree with APU."
 ]
 
-const [xxx1] = [
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+const [cs1,cs2,cs3,cs4,cs5] = [
+  "Current GPA: 3.6",
+  "Joined my first hackathon (Varsity Hackathon USM 2023) as the group leader with an idea of a blockchain identity verfication app for Malaysians to have access to government e-services.",
+  "Received excellent feedback from judges, including the formulation of the concept, excellent pitching, better than competitors, impressive use of technologies like blockchain, and a user-friendly interface.",
+  "Current projects for assignment includes: Inventory management system (Assembly, Computer System Low Level Technique Module). Airport simulation Program (Java, Concurrent Programming Module).",
+  "Top university recommendation system (C++, Data Structures). Automated Scene Description with Image Processing Program (Python, Imaging and Special Effects)",
+  "I am also writing a research paper on \"Blockchain-based voting system for Malaysia.\""
 ]
 
 const items = [
   {
     title: "2022 to 2024",
-    cardTitle: "To be Continued",
+    cardTitle: "Asia Pacific University of Technology & Innovation",
     cardSubtitle:
-      "2 years in Studying something Related to Tech",
-    cardDetailedText: [xxx1],
+      "2 years in Computer Science Degree",
+    cardDetailedText: [cs1,cs2,cs3,cs4,cs5],
   },
   {
     title: "2020 to 2022",

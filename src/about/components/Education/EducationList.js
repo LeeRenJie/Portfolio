@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Timeline.module.css";
 import { Chrono } from "react-chrono";
-import data from "./timelineData";
+import data from "./EducationData";
 import useWindowSize from "../../../shared/hooks/windowSize"
 
-const Timeline = () => {
+const EducationList = () => {
   const size = useWindowSize();
   const bigScreenMode = "VERTICAL_ALTERNATING";
   const smallScreenMode = "VERTICAL";
@@ -25,4 +25,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline;
+export default EducationList;

@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './HobbyList.module.scss'
-import HobbyCard from './HobbyCard'
+import styles from './HobbyList.module.scss';
+import HobbyCard from './HobbyCard';
 
 const HobbyList = props => {
 	return(
@@ -15,7 +15,7 @@ const HobbyList = props => {
 				/>
 			))}
 		</div>
-	)
+	);
 };
 
 export default HobbyList;

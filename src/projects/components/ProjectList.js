@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './ProjectList.module.scss'
-import ProjectCard from './ProjectCard'
+import styles from './ProjectList.module.scss';
+import ProjectCard from './ProjectCard';
 
 const ProjectList = props => {
 	return(
@@ -18,7 +18,7 @@ const ProjectList = props => {
         </a>
 			))}
 		</div>
-	)
+	);
 };
 
 export default ProjectList;

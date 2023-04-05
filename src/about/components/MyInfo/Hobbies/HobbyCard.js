@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './HobbyCard.module.scss'
+import styles from './HobbyCard.module.scss';
 
 const HobbyCard = props => {
     return (

@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./.module.css";
+import styles from "./Education.module.css";
 import { Chrono } from "react-chrono";
 import data from "./EducationData";
-import useWindowSize from "../../../shared/hooks/windowSize"
+import useWindowSize from "../../../shared/hooks/windowSize";
 
 const EducationList = () => {
   const size = useWindowSize();

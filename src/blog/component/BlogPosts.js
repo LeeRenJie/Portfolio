@@ -26,7 +26,7 @@ class BlogPosts extends React.Component {
 
   componentDidMount() {
     this.fetchPosts();
-  }
+  };
 
   fetchPosts = async () => {
     const response = await fetch('https://api.hashnode.com', {
@@ -35,7 +35,7 @@ class BlogPosts extends React.Component {
           'Content-type': 'application/json',
       },
       body: JSON.stringify({ query }),
-    })
+    });
     const ApiResponse = await response.json();
 
     // console.log(ApiResponse.data.user.publication.posts);
@@ -54,7 +54,7 @@ class BlogPosts extends React.Component {
         ))}
       </div>
     );
-  }
-}
+  };
+};
 
 export default BlogPosts;

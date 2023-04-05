@@ -1,7 +1,7 @@
 import React from 'react';
-import ProjectsTitle from '../components/ProjectsTitle'
-import ProjectData from '../components/ProjectData'
-import './Projects.scss'
+import ProjectsTitle from '../components/ProjectsTitle';
+import ProjectData from '../components/ProjectData';
+import './Projects.scss';
 
 const Projects = () => {
 	return(
@@ -9,7 +9,7 @@ const Projects = () => {
 			<ProjectsTitle/>
 			<ProjectData/>
 		</div>
-	)
+	);
 };
 
 export default Projects;

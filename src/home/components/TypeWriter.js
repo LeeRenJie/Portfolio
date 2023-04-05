@@ -1,8 +1,7 @@
-import React from 'react'
-import styles from './TypeWriter.module.css'
-
-import Typewriter from 'react-simple-typewriter'
-import 'react-simple-typewriter/dist/index.css'
+import React from 'react';
+import styles from './TypeWriter.module.css';
+import Typewriter from 'react-simple-typewriter';
+import 'react-simple-typewriter/dist/index.css';
 
 const TypeWriter = () => {
   const allWords= [
@@ -10,7 +9,7 @@ const TypeWriter = () => {
   'Web Developer.',
   'Block Chain Enthusiast.',
   'Blogger.'
-]
+];
 
   return (
     <div className={styles["tw-div"]}>
@@ -29,7 +28,7 @@ const TypeWriter = () => {
         </span>
       </h5>
     </div>
-  )
-}
+  );
+};
 
 export default TypeWriter;

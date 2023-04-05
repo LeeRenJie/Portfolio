@@ -1,6 +1,6 @@
 import React from 'react';
-import HobbyList from './HobbyList'
-import styles from './Hobbies.module.css'
+import HobbyList from './HobbyList';
+import styles from './Hobbies.module.css';
 
 const Hobbies = () => {
 	const HOBBIES = [

@@ -27,7 +27,7 @@ class App extends Component {
         </Router>
       </Fragment>
     );
-  }
-}
+  };
+};
 
 export default App;

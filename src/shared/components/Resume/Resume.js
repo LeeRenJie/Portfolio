@@ -5,7 +5,7 @@ const Resume = () => {
     return (
             <a
             className={styles.resume}
-            href="resume.pdf"
+            href="LeeRenJieResume.pdf"
             // target="_blank"
             download="LeeRenJie's Resume"
             >

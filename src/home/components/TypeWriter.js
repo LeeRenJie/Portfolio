@@ -1,4 +1,4 @@
-import React from 'react' 
+import React from 'react'
 import styles from './TypeWriter.module.css'
 
 import Typewriter from 'react-simple-typewriter'
@@ -6,17 +6,16 @@ import 'react-simple-typewriter/dist/index.css'
 
 const TypeWriter = () => {
   const allWords= [
-  'a Student.', 
-  'a Web Developer.', 
-  'an AI Enthusiast.', 
-  'an Open Source Contributor.',
-  'a blogger.'
+  'CS Student.',
+  'Web Developer.',
+  'Block Chain Enthusiast.',
+  'Blogger.'
 ]
 
   return (
     <div className={styles["tw-div"]}>
       <h5 className={styles.typewriter}>
-        I am {' '}
+        I am a {' '}
         <span className={styles['tw-span']}>
           <Typewriter
             loop

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Timeline.module.css";
+import styles from "./.module.css";
 import { Chrono } from "react-chrono";
 import data from "./EducationData";
 import useWindowSize from "../../../shared/hooks/windowSize"

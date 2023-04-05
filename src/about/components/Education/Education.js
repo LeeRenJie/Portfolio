@@ -1,6 +1,6 @@
 import React from 'react';
 import EducationList from './EducationList'
-import style from '../../../shared/styles/Title.module.scss'
+import style from './Education.module..css'
 
 const Education = () => {
     return(

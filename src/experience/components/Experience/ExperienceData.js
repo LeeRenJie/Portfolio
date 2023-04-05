@@ -16,14 +16,14 @@ const [int1, int2, int3, int4, int5, int6]  = [
 
 const items = [
   {
-    title: "May 2022 – Aug 2022",
+    title: "May 2022 to Aug 2022",
     cardTitle: "Web Developer Apprentice",
     cardSubtitle:
       "Brand Geeks Inc",
     cardDetailedText: [int1, int2, int3, int4, int5, int6],
   },
   {
-    title: "Dec 2020 - Feb 2021",
+    title: "Dec 2020 to Feb 2021",
     cardTitle: "Open-source Contributor",
     cardSubtitle:
       "DevScript",

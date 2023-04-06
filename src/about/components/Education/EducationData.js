@@ -16,12 +16,11 @@ const [apu1, apu2, apu3, apu4, apu5, apu6, apu7, apu8] = [
   "Successfully graduated and continued in a CS degree with APU."
 ]
 
-const [cs1,cs2,cs3,cs4,cs5] = [
+const [cs1,cs2,cs3,cs4] = [
   "Current GPA: 3.6",
   "Joined my first hackathon (Varsity Hackathon USM 2023) as the group leader with an idea of a blockchain identity verfication app for Malaysians to have access to government e-services.",
   "Received excellent feedback from judges, including the formulation of the concept, excellent pitching, better than competitors, impressive use of technologies like blockchain, and a user-friendly interface.",
-  "Current projects for assignment includes: Inventory management system (Assembly, Computer System Low Level Technique Module). Airport simulation Program (Java, Concurrent Programming Module).",
-  "Top university recommendation system (C++, Data Structures). Automated Scene Description with Image Processing Program (Python, Imaging and Special Effects)",
+  "Current projects for assignment includes: Inventory management system (Assembly, Computer System Low Level Technique Module). Airport simulation Program (Java, Concurrent Programming Module). Top university recommendation system (C++, Data Structures). Automated Scene Description with Image Processing Program (Python, Imaging and Special Effects)",
   "I am also writing a research paper on \"Blockchain-based voting system for Malaysia.\""
 ]
 
@@ -31,7 +30,7 @@ const items = [
     cardTitle: "Asia Pacific University of Technology & Innovation",
     cardSubtitle:
       "2 years in Computer Science Degree",
-    cardDetailedText: [cs1,cs2,cs3,cs4,cs5],
+    cardDetailedText: [cs1,cs2,cs3,cs4],
   },
   {
     title: "2020 to 2022",

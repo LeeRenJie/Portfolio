@@ -1,13 +1,36 @@
+/* Navbar styles */
+.navbar-div {
+  background: #232323;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;;
+  align-items: center;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  overflow: inherit;
+}
+
+.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
 /*Title styles */
 .title {
-  position: relative;
-  right:800px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: white;
   font-family: 'Cedarville Cursive', cursive;
-  text-decoration: none;
   font-size: 35px;
   opacity: 0.9;
+  padding: 0 20px;
 }
 
 /* Title animations */
@@ -105,37 +128,6 @@
 
 .title>div {
   display: inline-block;
-}
-
-/* Navbar styles */
-
-.navbar-div {
-  background: #232323;
-  height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 1rem;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  z-index: 10;
-  overflow: inherit;
-}
-
-.nav-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  padding-top: 10px;
-  padding-right: 20px;
 }
 
 /* Nav link styles */

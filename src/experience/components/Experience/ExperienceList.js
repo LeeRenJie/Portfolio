@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Experience.module.css";
 import { Chrono } from "react-chrono";
 import history from "./ExperienceData";
-import useWindowSize from "../../../shared/hooks/windowSize";
+import useWindowSize from "../../../shared/hooks/useWindowSize";
 
 const ExperienceList = () => {
   const size = useWindowSize();

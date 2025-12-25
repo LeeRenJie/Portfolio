@@ -1,65 +1,55 @@
-# Portfolio Website
+# RJ.OS v2.1.0 // Futuristic Portfolio System
 
-[Click Here](https://leerenjie.github.io/Portfolio/)
-<img src="https://media.giphy.com/media/836HiJc7pgzy8iNXCn/giphy.gif" align="right"  width="45%"/>
+A high-performance, scifi-themed portfolio application built with React, Tailwind CSS, Anime.js, and GSAP. Designed for software engineers who operate in the high-density data space.
 
-## Technology Stack
-<p>
-<img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react" >
-</p>
+## 🚀 Uplink Instructions (Quick Start)
 
-## Considered Technologies
-<p>
-<img src="https://img.shields.io/badge/-Threejs%20-black?style=for-the-badge&logo=three.js">
-<img src="https://img.shields.io/badge/-Firebasae%20-black?style=for-the-badge&logo=firebase">
-<img src="https://img.shields.io/badge/-sass%20-black?style=for-the-badge&logo=sass">
-  <img src="https://img.shields.io/badge/-mailchimp%20-black?style=for-the-badge&logo=mailchimp">
-</p>
+1. **Clone the Core**:
+   ```bash
+   git clone https://github.com/LeeRenJie/Portfolio.git
+   cd Portfolio
+   ```
 
-## Planning
+2. **Mount Modules**:
+   ```bash
+   npm install
+   ```
 
-- [x] Idea generation
-  > Building a portfolio website to showcase my professional journey and as a personal project to build with ReactJS
-- [x] Design creation
-  > A general idea is in mind
-- [x] Data model planning
-  > Skipped as there is no database involved
-- [x] Endpoint and page planning
-  > API: Hashnode's API for blog posts
+3. **Engage System**:
+   ```bash
+   npm run dev
+   ```
 
-## Building and Coding
+4. **Compile Production Build**:
+   ```bash
+   npm run build
+   ```
 
-### Navbar
-- [x] Nav-link to all different pages
-- [x] Interactive name
-- [x] Active link color
+## 🛠 Engineering Guide (Customization)
 
-### Home Page
-- [x] Social handles
-- [x] Mailto function
-- [x] Downloadable resume across all pages
-- [x] Interactive background
-- [x] typewriter effect
+The system is modularized to allow for rapid reconfiguration:
 
-### About Page 
-- [x] Detailed introduction of myself
-- [ ] Display skillsets
-- [x] Display education
+- **Personal Data**: Modify `src/components/ProfileSection.jsx` for identity parameters.
+- **Mission Archives**: Update the `projects` array in `src/components/ProjectsSection.jsx` to reflect your deployment history.
+- **Experience Logs**: Edit `src/components/ExperienceSection.jsx` to synchronize your career telemetry.
+- **System Specs**: Update `src/components/StackSection.jsx` to map your current technology masteries.
+- **Communication Channels**: Reconfigure `src/components/ContactSection.jsx` with your external uplinks.
 
-### Experience Page 
-- [x] Design done
-- [x] Data Included
+## 📡 Technology Stack
 
-### Projects Page 
-- [ ] Design
-- [ ] Data 
-- [ ] Link to projects
-- [ ] Filter based on tags
+- **Core**: React 18+
+- **Styling**: Tailwind CSS (Tactical Geometry)
+- **Animations**: Anime.js (Micro-interactions) & GSAP (Scroll Precision)
+- **Visuals**: Lucide React (System Icons)
+- **Deployment**: Vite (High-Speed Engine)
 
-### Blog Page
-- [x] Display latest 6 blogs
-- [x] Open new tab for user to read blog post when clicked
+## ⚖️ Operational Protocol (License)
 
-## References
-- [Pushing to Production](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f)
-- [Displaying Blog in React with Hashnode API](https://blog.rutikwankhade.dev/adding-your-blogs-on-a-portfolio-with-react-and-hashnode-api)
+This repository is open-source and intended for educational and personal use.
+- You are free to clone, modify, and deploy your own instance.
+- **Credit Requirement**: Please maintain a reference to the original architect (Lee Ren Jie) in the source metadata.
+- **Restrictions**: Commercial redistribution of the core UX pattern as a standalone template for sale is prohibited.
+
+---
+**ORIGINAL_ARCHITECT**: [Lee Ren Jie](https://github.com/LeeRenJie)
+**SYSTEM_STATUS**: STABLE // v2.1.0

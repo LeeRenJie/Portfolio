@@ -1,5 +1,2 @@
-name = "rjcodes"
-compatibility_date = "2025-12-26"
-
-[site]
-bucket = "./dist"
+name = "portfolio"
+pages_build_output_dir = "dist"

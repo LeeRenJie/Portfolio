@@ -5,24 +5,24 @@ const skillCategories = [
   {
     category: "Frontend",
     skills: [
-      { name: "React.js", level: 95, projects: ["CredMatch", "ArkHP", "redCASH", "SaaS Lending"] },
-      { name: "Next.js", level: 60, projects: ["Hireti", "VerifyMy"] },
-      { name: "React Native", level: 70, projects: ["Codeo Mobile App"] },
-      { name: "TypeScript", level: 90, projects: ["CredMatch", "ArkHP", "Hireti", "SaaS Lending"] },
-      { name: "Redux", level: 780, projects: ["CredMatch", "Codeo App"] },
-      { name: "Ant Design", level: 90, projects: ["CredMatch"] },
-      { name: "TailwindCSS", level: 95, projects: ["Hireti", "Codeo Landing", "redCASH"] },
-      { name: "Pug", level: 50, projects: ["Sigma Studios Landing"] }
+      { name: "React.js", level: 90, projects: ["CredMatch", "ArkHP", "redCASH", "SaaS Lending"] },
+      { name: "Next.js", level: 55, projects: ["Hireti", "VerifyMy"] },
+      { name: "React Native", level: 65, projects: ["Codeo Mobile App"] },
+      { name: "TypeScript", level: 88, projects: ["CredMatch", "ArkHP", "Hireti", "SaaS Lending"] },
+      { name: "Redux", level: 85, projects: ["CredMatch", "Codeo App"] },
+      { name: "Ant Design", level: 88, projects: ["CredMatch"] },
+      { name: "TailwindCSS", level: 92, projects: ["Hireti", "Codeo Landing", "redCASH"] },
+      { name: "Pug", level: 45, projects: ["Sigma Studios Landing"] }
     ]
   },
   {
     category: "Backend",
     skills: [
-      { name: "Node.js", level: 70, projects: ["ArkHP", "Codeo Backend", "JobBuddy"] },
-      { name: "Express.js", level: 70, projects: ["Codeo Backend", "Sheet Linker"] },
-      { name: ".NET", level: 50, projects: ["ArkCash White-Label"] },
+      { name: "Node.js", level: 80, projects: ["ArkHP", "Codeo Backend", "JobBuddy"] },
+      { name: "Express.js", level: 78, projects: ["Codeo Backend", "Sheet Linker"] },
+      { name: ".NET", level: 60, projects: ["ArkCash White-Label"] },
       { name: "Ruby On Rails", level: 55, projects: ["Internal Tools"] },
-      { name: "Prisma ORM", level: 80, projects: ["ArkHP", "SaaS Lending"] },
+      { name: "Prisma ORM", level: 85, projects: ["ArkHP", "SaaS Lending"] },
       { name: "Apollo GraphQL", level: 40, projects: ["Codeo Mobile App"] },
       { name: "Hasura", level: 40, projects: ["Codeo Mobile App"] }
     ]
@@ -30,8 +30,7 @@ const skillCategories = [
   {
     category: "Database",
     skills: [
-      { name: "MySQL", level: 90, projects: ["ArkHP", "CredMatch", "SaaS Lending"] },
-      { name: "PostgreSQL", level: 60, projects: ["SaaS Infrastructure"] },
+      { name: "MySQL", level: 88, projects: ["ArkHP", "CredMatch", "SaaS Lending"] },
       { name: "MongoDB", level: 60, projects: ["JobBuddy Discord Bot"] }
     ]
   },
@@ -39,14 +38,14 @@ const skillCategories = [
     category: "DevOps & Infrastructure",
     skills: [
       { name: "Docker", level: 60, projects: ["Microservices Deployment"] },
-      { name: "Kubernetes (K8s)", level: 50, projects: ["Cluster Orchestration"] },
-      { name: "GitHub Actions", level: 85, projects: ["CI/CD Automation"] },
-      { name: "Jenkins", level: 50, projects: ["Arkmind CI/CD Pipeline"] },
+      { name: "Kubernetes (K8s)", level: 55, projects: ["Cluster Orchestration"] },
+      { name: "GitHub Actions", level: 82, projects: ["CI/CD Automation"] },
+      { name: "Jenkins", level: 45, projects: ["Arkmind CI/CD Pipeline"] },
       { name: "AWS", level: 50, projects: ["Hireti Hosting", "Lambda Functions"] },
-      { name: "DigitalOcean", level: 70, projects: ["App Hosting", "Static Sites"] },
-      { name: "NGINX", level: 70, projects: ["Reverse Proxy"] },
-      { name: "PM2", level: 70, projects: ["Process Management"] },
-      { name: "Linux", level: 60, projects: ["Server Administration"] }
+      { name: "DigitalOcean", level: 78, projects: ["App Hosting", "Static Sites"] },
+      { name: "NGINX", level: 75, projects: ["Reverse Proxy"] },
+      { name: "PM2", level: 75, projects: ["Process Management"] },
+      { name: "Linux", level: 68, projects: ["Server Administration"] }
     ]
   },
   {
@@ -54,7 +53,7 @@ const skillCategories = [
     skills: [
       { name: "Prompt Engineering", level: 95, projects: ["AI-Powered Workflows"] },
       { name: "Claude Code", level: 95, projects: ["Rapid Development"] },
-      { name: "Respond.io", level: 80, projects: ["Customer Automation | Villa Customer Communication Workflow"] }
+      { name: "Respond.io", level: 88, projects: ["Customer Automation | Villa Customer Communication Workflow"] }
     ]
   },
   {
@@ -65,10 +64,10 @@ const skillCategories = [
       { name: "Postman", level: 70, projects: ["API Testing"] },
       { name: "GA4", level: 50, projects: ["User Analytics"] },
       { name: "GTM", level: 50, projects: ["Event Tracking"] },
-      { name: "WordPress", level: 90, projects: ["Arkmind Website", "AoDL Website", "Other Freelance Projects"] },
+      { name: "WordPress", level: 85, projects: ["Arkmind Website", "AoDL Website", "Other Freelance Projects"] },
       { name: "Termius", level: 90, projects: ["SSH Management"] },
-      { name: "Jest", level: 82, projects: ["Codeo App Testing, Arkmind Related Projects"] },
-      { name: "SonarQube", level: 75, projects: ["Code Quality Scanning, Arkmind Related Projects" ] }
+      { name: "Jest", level: 70, projects: ["Codeo App Testing, Arkmind Related Projects"] },
+      { name: "SonarQube", level: 75, projects: ["Code Quality Scanning, Arkmind Related Projects"] }
     ]
   }
 ];
@@ -155,22 +154,22 @@ export default function StackSection() {
 
   return (
     <section className="h-full lg:min-h-[calc(100vh-8rem)] w-full flex flex-col justify-center overflow-hidden bg-[var(--bg-color)]">
-      <div className="w-full flex flex-col h-full lg:min-h-[calc(100vh-8rem)] py-12 lg:py-8 px-12 lg:px-20">
-        <div className="flex flex-col md:flex-row md:items-end justify-between pb-4 lg:pb-3 mb-6 lg:mb-4 border-b border-[var(--border-color)] gap-4 shrink-0">
+      <div className="w-full flex flex-col h-full lg:min-h-[calc(100vh-8rem)] py-8 md:py-12 lg:py-8 px-4 md:px-12 lg:px-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-4 lg:pb-3 mb-4 md:mb-6 lg:mb-4 border-b border-[var(--border-color)] gap-3 md:gap-4 shrink-0">
           <div>
-            <h2 className="text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase leading-none">System Specs</h2>
-            <div className="text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.3em] uppercase">
+            <h2 className="text-2xl md:text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase leading-none">System Specs</h2>
+            <div className="text-[9px] md:text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.2em] md:tracking-[0.3em] uppercase">
               {categorySubtitles[activeCategory] || "Module_Mapping // Version_Control"}
             </div>
           </div>
 
-          {/* Category Switcher */}
-          <div className="flex flex-wrap gap-2">
+          {/* Category Switcher - Wraps on mobile/tablet, inline on desktop */}
+          <div className="flex flex-wrap gap-1.5 md:gap-1.5 lg:gap-2 pb-1 max-w-full lg:max-w-none">
             {skillCategories.map(cat => (
               <button
                 key={cat.category}
                 onClick={() => setActiveCategory(cat.category)}
-                className={`px-4 py-1.5 rounded-full text-[10px] font-bold font-mono transition-all border ${activeCategory === cat.category
+                className={`px-2 md:px-2.5 lg:px-4 py-1 md:py-1 lg:py-1.5 rounded-full text-[8px] md:text-[9px] lg:text-[10px] font-bold font-mono transition-all border whitespace-nowrap ${activeCategory === cat.category
                     ? 'bg-[var(--accent-color)] text-black border-[var(--accent-color)]'
                     : 'bg-transparent text-[var(--text-secondary)] border-[var(--border-color)] hover:border-[var(--text-primary)] hover:text-[var(--text-primary)]'
                   }`}
@@ -181,31 +180,67 @@ export default function StackSection() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 flex-1 items-start content-center overflow-y-auto no-scrollbar">
-          {skillCategories.find(c => c.category === activeCategory).skills.map((skill) => (
-            <div
-              key={skill.name}
-              className="font-mono text-sm relative group flex items-center"
-            >
-              <SkillBar name={skill.name} level={skill.level} />
+        {(() => {
+          const skills = skillCategories.find(c => c.category === activeCategory).skills;
+          const uniqueProjects = [...new Set(skills.flatMap(s => s.projects))];
+          const avgLevel = Math.round(skills.reduce((sum, s) => sum + Math.min(s.level, 100), 0) / skills.length);
+          const criticalCount = skills.filter(s => s.level >= 90).length;
+          // Dynamic columns: 3 cols only for 9+ skills, otherwise 2 cols (on desktop)
+          const gridCols = skills.length >= 9 ? 'lg:grid-cols-3' : 'lg:grid-cols-2';
 
-              {/* Deep Dive Tooltip - CSS hover based */}
-              <div className="absolute top-[100%] left-0 w-full z-50 mt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                <div className="bg-[var(--panel-bg)] border border-[var(--accent-color)]/30 p-4 rounded-2xl shadow-2xl relative">
-                  <div className="text-[9px] text-[var(--accent-color)] mb-2 font-black tracking-widest uppercase opacity-50">Deployed In:</div>
-                  <div className="flex flex-wrap gap-2">
-                    {skill.projects.map(p => (
-                      <span key={p} className="text-[10px] text-[var(--text-primary)] border-l border-[var(--accent-color)] pl-2 opacity-80">
-                        {p}
-                      </span>
-                    ))}
+          return (
+            <>
+              <div className={`grid grid-cols-1 md:grid-cols-2 ${gridCols} gap-x-6 md:gap-x-12 gap-y-6 md:gap-y-10 items-start content-start`}>
+                {skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="font-mono text-sm relative group flex items-center"
+                  >
+                    <SkillBar name={skill.name} level={skill.level} />
+
+                    {/* Deep Dive Tooltip - Hidden on mobile, shown on desktop hover */}
+                    <div className="absolute top-[100%] left-0 w-full z-50 mt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 hidden md:block">
+                      <div className="bg-[var(--panel-bg)] border border-[var(--accent-color)]/30 p-4 rounded-2xl shadow-2xl relative">
+                        <div className="text-[9px] text-[var(--accent-color)] mb-2 font-black tracking-widest uppercase opacity-50">Deployed In:</div>
+                        <div className="flex flex-wrap gap-2">
+                          {skill.projects.map(p => (
+                            <span key={p} className="text-[10px] text-[var(--text-primary)] border-l border-[var(--accent-color)] pl-2 opacity-80">
+                              {p}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="absolute top-[-6px] left-8 w-3 h-3 bg-[var(--panel-bg)] border-l border-t border-[var(--accent-color)]/30 transform rotate-45"></div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="absolute top-[-6px] left-8 w-3 h-3 bg-[var(--panel-bg)] border-l border-t border-[var(--accent-color)]/30 transform rotate-45"></div>
+                ))}
+              </div>
+
+              {/* Stats Card - Desktop only, below progress bars */}
+              <div className="hidden lg:flex mt-auto pt-8 gap-8 border-t border-[var(--border-color)]">
+                <div className="flex items-center gap-3">
+                  <span className="text-[9px] text-[var(--text-secondary)] uppercase tracking-widest">Technologies</span>
+                  <span className="text-lg font-black text-[var(--accent-color)]">{skills.length}</span>
+                </div>
+                <div className="w-px h-6 bg-[var(--border-color)]"></div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[9px] text-[var(--text-secondary)] uppercase tracking-widest">Deployments</span>
+                  <span className="text-lg font-black text-[var(--accent-color)]">{uniqueProjects.length}</span>
+                </div>
+                <div className="w-px h-6 bg-[var(--border-color)]"></div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[9px] text-[var(--text-secondary)] uppercase tracking-widest">Avg Proficiency</span>
+                  <span className="text-lg font-black text-[var(--accent-color)]">{avgLevel}%</span>
+                </div>
+                <div className="w-px h-6 bg-[var(--border-color)]"></div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[9px] text-[var(--text-secondary)] uppercase tracking-widest">Critical Systems</span>
+                  <span className="text-lg font-black text-[var(--accent-color)]">{criticalCount}</span>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            </>
+          );
+        })()}
       </div>
     </section>
   );

@@ -65,7 +65,20 @@ section {
   box-sizing: border-box;
   -webkit-user-select: none;
   user-select: none;
-  cursor: none !important;
+}
+
+/* Hide custom cursor on desktop only */
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Show normal cursor on mobile/touch devices */
+@media (max-width: 767px), (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
 }
 
 body {
@@ -284,4 +297,15 @@ a {
 
 .horizontal-scroll > * {
   flex-shrink: 0;
+}
+
+/* Sidebar visibility - hidden on mobile, flex on desktop */
+.sidebar-nav {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .sidebar-nav {
+    display: flex !important;
+  }
 }

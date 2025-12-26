@@ -62,7 +62,7 @@ export default function BootScreen({ onComplete }) {
 
   if (isMobile) {
     return (
-      <div className="fixed inset-0 bg-black z-[9999] flex items-center justify-center p-8 text-center">
+      <div className="fixed inset-0 bg-black z-[9999] flex items-center justify-center p-6 text-center">
         <button
           type="button"
           className="absolute inset-0 w-full h-full cursor-default focus:outline-none"
@@ -70,17 +70,17 @@ export default function BootScreen({ onComplete }) {
           onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onComplete(); }}
           aria-label="Skip boot screen"
         />
-        <div className="space-y-8 max-w-sm border border-[#00f3ff]/20 p-10 rounded-3xl bg-[#050505] shadow-[0_0_50px_rgba(0,243,255,0.1)] relative z-10">
-           <div className="w-16 h-16 border-2 border-[#00f3ff] rounded-full mx-auto flex items-center justify-center animate-pulse">
-              <span className="text-[#00f3ff] font-black text-2xl">!</span>
+        <div className="space-y-6 max-w-xs border border-[#00f3ff]/20 p-8 rounded-3xl bg-[#050505] shadow-[0_0_50px_rgba(0,243,255,0.1)] relative z-10">
+           <div className="w-14 h-14 border-2 border-[#00f3ff] rounded-full mx-auto flex items-center justify-center">
+              <span className="text-[#00f3ff] font-black text-xl">RJ</span>
            </div>
-           <h2 className="text-[#00f3ff] font-black tracking-widest text-xl uppercase">RESTRICTED_ACCESS</h2>
-           <p className="text-gray-500 font-mono text-xs leading-relaxed uppercase tracking-tighter">
-              MOBILE_NODE_DETECTED. SYSTEM ARCHITECTURE REQUIRES DESKTOP RESOLUTION FOR FULL NEURAL SYNC.
+           <h2 className="text-[#00f3ff] font-black tracking-widest text-lg uppercase">RJ.OS</h2>
+           <p className="text-gray-500 font-mono text-[10px] leading-relaxed uppercase tracking-tight">
+              MOBILE_NODE_DETECTED. INITIALIZING COMPACT_VIEW_MODE.
            </p>
-           <div className="text-[10px] text-gray-700 font-mono italic">[ PLEASE SWITCH TO WORKSTATION ]</div>
-           <button onClick={onComplete} className="block w-full py-4 border border-[#00f3ff] text-[#00f3ff] text-[10px] font-black tracking-widest hover:bg-[#00f3ff] hover:text-black transition-all rounded-full uppercase">
-              FORCE_MOBILE_UPLINK
+           <div className="text-[9px] text-gray-600 font-mono">[ TAP TO CONTINUE ]</div>
+           <button onClick={onComplete} className="block w-full py-3 bg-[#00f3ff] text-black text-[10px] font-black tracking-widest rounded-full uppercase">
+              INITIALIZE_UPLINK
            </button>
         </div>
       </div>
@@ -151,46 +151,52 @@ export default function BootScreen({ onComplete }) {
   );
 }
 
-// Re-using the CustomCursor logic for the boot screen
+// Simplified cursor for boot screen - no trail for better performance
 function CustomCursor() {
   const dotRef = useRef(null);
-  const outlineRef = useRef(null);
 
   useEffect(() => {
+    let rafId = null;
+    let lastX = -100, lastY = -100;
+
     const onMouseMove = (e) => {
-      const { clientX, clientY } = e;
-      if (dotRef.current) dotRef.current.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
-      if (outlineRef.current) outlineRef.current.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
+      lastX = e.clientX;
+      lastY = e.clientY;
 
-      const trail = document.createElement('div');
-      trail.className = 'cursor-trail';
-      trail.style.left = `${clientX}px`;
-      trail.style.top = `${clientY}px`;
-      document.body.appendChild(trail);
-
-      if (animate) {
-        animate(trail, {
-          scale: [1, 0],
-          opacity: [0.3, 0],
-          translateY: -20,
-          duration: 800,
-          easing: 'easeOutSine',
-          complete: () => trail.remove()
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          if (dotRef.current) {
+            dotRef.current.style.transform = `translate3d(${lastX}px, ${lastY}px, 0)`;
+          }
+          rafId = null;
         });
-      } else {
-        setTimeout(() => trail.remove(), 800);
       }
     };
 
-    globalThis.addEventListener('mousemove', onMouseMove);
-    return () => globalThis.removeEventListener('mousemove', onMouseMove);
+    globalThis.addEventListener('mousemove', onMouseMove, { passive: true });
+    return () => {
+      globalThis.removeEventListener('mousemove', onMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
-    <>
-      <div id="cursor-dot" ref={dotRef} style={{ position: 'fixed', top: 0, left: 0, transform: 'translate3d(-100px, -100px, 0)', pointerEvents: 'none', zIndex: 10001 }}></div>
-      <div id="cursor-outline" ref={outlineRef} style={{ position: 'fixed', top: 0, left: 0, transform: 'translate3d(-100px, -100px, 0)', transition: 'transform 0.15s ease-out', pointerEvents: 'none', zIndex: 10000 }}></div>
-    </>
+    <div
+      ref={dotRef}
+      style={{
+        position: 'fixed',
+        top: -4,
+        left: -4,
+        width: 8,
+        height: 8,
+        backgroundColor: '#00f3ff',
+        borderRadius: '50%',
+        transform: 'translate3d(-100px, -100px, 0)',
+        pointerEvents: 'none',
+        zIndex: 10001,
+        willChange: 'transform'
+      }}
+    />
   );
 }
 

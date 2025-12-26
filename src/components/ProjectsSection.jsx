@@ -177,35 +177,92 @@ export default function ProjectsSection({ onOpenModal }) {
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
+  const currentIndexRef = useRef(0);
+  const isScrollingRef = useRef(false);
 
   const checkScroll = () => {
     if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      const container = scrollRef.current;
+      const { scrollLeft, scrollWidth, clientWidth } = container;
       setCanScrollLeft(scrollLeft > 10);
       setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+
+      // Calculate current index using actual card width
+      const firstCard = container.children[0];
+      const cardWidth = firstCard ? firstCard.offsetWidth : clientWidth;
+      const newIndex = Math.min(Math.max(Math.round(scrollLeft / cardWidth), 0), projects.length - 1);
+      currentIndexRef.current = newIndex;
     }
   };
 
   React.useEffect(() => {
     const el = scrollRef.current;
     if (el) {
-      el.addEventListener('scroll', checkScroll);
-      checkScroll(); // Initial check
-      // Also check on resize
-      globalThis.addEventListener('resize', checkScroll);
+      el.addEventListener('scroll', checkScroll, { passive: true });
+      checkScroll();
+
+      // On resize, use tracked currentIndexRef to snap to correct position
+      let resizeTimer;
+      const handleResize = () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          if (!scrollRef.current) return;
+          const container = scrollRef.current;
+          const firstCard = container.children[0];
+          if (firstCard) {
+            // Use the ref to get current index (survives closure)
+            const cardWidth = firstCard.offsetWidth;
+            container.scrollLeft = currentIndexRef.current * cardWidth;
+          }
+          checkScroll();
+        }, 50);
+      };
+      globalThis.addEventListener('resize', handleResize);
+
+      // Reset scroll lock when scroll ends
+      let scrollEndTimer;
+      const handleScrollEnd = () => {
+        clearTimeout(scrollEndTimer);
+        scrollEndTimer = setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 150);
+      };
+      el.addEventListener('scroll', handleScrollEnd, { passive: true });
+
       return () => {
         el.removeEventListener('scroll', checkScroll);
-        globalThis.removeEventListener('resize', checkScroll);
+        el.removeEventListener('scroll', handleScrollEnd);
+        globalThis.removeEventListener('resize', handleResize);
+        clearTimeout(scrollEndTimer);
+        clearTimeout(resizeTimer);
       };
     }
   }, []);
 
   const scroll = (direction) => {
-    if (scrollRef.current) {
-      // Scroll by exactly the visible container width (3 cards)
-      const scrollAmount = scrollRef.current.clientWidth;
-      scrollRef.current.scrollBy({
-        left: direction === 'right' ? scrollAmount : -scrollAmount,
+    if (scrollRef.current && !isScrollingRef.current) {
+      isScrollingRef.current = true;
+      const container = scrollRef.current;
+      const cards = container.children;
+
+      if (cards.length === 0) return;
+
+      // Get actual card width from DOM (no gap in horizontal-scroll)
+      const firstCard = cards[0];
+      const cardWidth = firstCard.offsetWidth;
+      const currentScroll = container.scrollLeft;
+
+      // Calculate current card index
+      const currentCard = Math.round(currentScroll / cardWidth);
+      const targetCard = direction === 'right'
+        ? Math.min(currentCard + 1, projects.length - 1)
+        : Math.max(currentCard - 1, 0);
+
+      // Scroll to exact card position
+      const targetScroll = targetCard * cardWidth;
+
+      container.scrollTo({
+        left: targetScroll,
         behavior: 'smooth'
       });
     }
@@ -213,12 +270,12 @@ export default function ProjectsSection({ onOpenModal }) {
 
   return (
     <section className="h-full lg:min-h-[calc(100vh-8rem)] w-full flex flex-col overflow-hidden bg-[var(--bg-color)]">
-      <div className="w-full h-full lg:min-h-[calc(100vh-8rem)] flex flex-col overflow-hidden min-h-0 py-12 lg:py-8 px-12 lg:px-20">
-        <div className="flex items-end justify-between pb-4 lg:pb-3 mb-6 lg:mb-4 border-b border-[var(--border-color)] shrink-0">
-          <div className="flex flex-col md:flex-row md:items-end gap-6 lg:gap-8">
+      <div className="w-full h-full lg:min-h-[calc(100vh-8rem)] flex flex-col overflow-hidden min-h-0 py-8 md:py-12 lg:py-8 px-4 md:px-12 lg:px-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-4 lg:pb-3 mb-4 md:mb-6 lg:mb-4 border-b border-[var(--border-color)] shrink-0 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end gap-4 lg:gap-8">
             <div>
-              <h2 className="text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase">Operational Archive</h2>
-              <div className="text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.3em] uppercase">REPOSITORY_SCAN // {projects.length}_MODULES_ACTIVE</div>
+              <h2 className="text-2xl md:text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase">Operational Archive</h2>
+              <div className="text-[9px] md:text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.2em] md:tracking-[0.3em] uppercase">REPOSITORY_SCAN // {projects.length}_MODULES_ACTIVE</div>
             </div>
             <div className="text-[10px] text-[var(--text-secondary)] font-mono hidden lg:block uppercase tracking-widest leading-relaxed border-l border-[var(--border-color)] pl-6 opacity-50">
               UPLINK_STABLE<br />
@@ -226,7 +283,8 @@ export default function ProjectsSection({ onOpenModal }) {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-4">
             <button
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
@@ -252,7 +310,7 @@ export default function ProjectsSection({ onOpenModal }) {
 
         <div
           ref={scrollRef}
-          className="horizontal-scroll flex-1 items-center no-scrollbar"
+          className="horizontal-scroll flex-1 items-center no-scrollbar snap-x snap-mandatory md:snap-none"
         >
           {projects.map((project, index) => (
             <ProjectItem
@@ -262,6 +320,30 @@ export default function ProjectsSection({ onOpenModal }) {
               onClick={() => onOpenModal(project)}
             />
           ))}
+        </div>
+
+        {/* Mobile Bottom Navigation */}
+        <div className="md:hidden flex items-center justify-between pt-4 border-t border-[var(--border-color)] shrink-0">
+          <button
+            onClick={() => scroll('left')}
+            disabled={!canScrollLeft}
+            className={`px-4 py-2 border rounded-full transition-all text-[9px] font-black tracking-wider ${canScrollLeft
+              ? 'border-[var(--accent-color)] text-[var(--accent-color)]'
+              : 'border-[var(--border-color)] text-[var(--text-secondary)] opacity-30'
+              }`}
+          >
+            PREVIOUS_LOG
+          </button>
+          <button
+            onClick={() => scroll('right')}
+            disabled={!canScrollRight}
+            className={`px-4 py-2 border rounded-full transition-all text-[9px] font-black tracking-wider ${canScrollRight
+              ? 'border-[var(--accent-color)] text-[var(--accent-color)]'
+              : 'border-[var(--border-color)] text-[var(--text-secondary)] opacity-30'
+              }`}
+          >
+            NEXT_LOG
+          </button>
         </div>
       </div>
     </section>
@@ -283,41 +365,47 @@ function ProjectItem({ project, index, onClick }) {
     <button
       type="button"
       onClick={() => onClick()}
-      className="group cursor-pointer bg-[var(--panel-bg)] hover:bg-[var(--accent-color)] transition-all duration-700 relative overflow-hidden flex-shrink-0 w-[85vw] md:w-[calc((100vw-8rem-6rem)/3)] lg:w-[calc((100vw-8rem-10rem)/3)] h-full border-r border-[var(--border-color)] p-6 md:p-8 lg:p-10 flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-inset text-left"
+      className="group cursor-pointer bg-[var(--panel-bg)] hover:bg-[var(--accent-color)] transition-all duration-700 relative overflow-hidden flex-shrink-0 w-full md:w-[calc((100vw-8rem-6rem)/3)] lg:w-[calc((100vw-8rem-10rem)/3)] h-full border-r border-[var(--border-color)] p-4 md:p-4 lg:p-8 flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-inset text-left snap-start md:snap-align-none"
     >
       <div className="relative z-10 transition-colors duration-500 group-hover:text-[var(--bg-color)] h-full flex flex-col overflow-hidden min-h-0">
-        <div className="flex justify-between items-start mb-4 shrink-0">
-          <div className="space-y-2">
-            <div className="text-[9px] font-black uppercase tracking-[0.4em] opacity-30 group-hover:text-black/30">
+        {/* Status badge - hidden on tablet, shown on mobile and desktop */}
+        <div className="flex justify-between items-start mb-2 md:mb-1 lg:mb-4 shrink-0">
+          <div className="space-y-1 lg:space-y-2 hidden md:hidden lg:block">
+            <div className="text-[8px] lg:text-[9px] font-black uppercase tracking-[0.3em] lg:tracking-[0.4em] opacity-30 group-hover:text-black/30">
               LIFECYCLE_STATUS
             </div>
-            <div className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 border rounded-full inline-block ${getStatusClasses(project.status)}`}>
+            <div className={`text-[9px] lg:text-[10px] font-black uppercase tracking-widest px-2 lg:px-3 py-1 border rounded-full inline-block ${getStatusClasses(project.status)}`}>
               {project.status}
             </div>
           </div>
-          <div className="text-[10px] font-black uppercase tracking-[0.4em] opacity-50 group-hover:text-black/50">
+          {/* Mobile status - compact */}
+          <div className={`md:hidden text-[8px] font-black uppercase tracking-wider px-2 py-0.5 border rounded-full ${getStatusClasses(project.status)}`}>
+            {project.status}
+          </div>
+          <div className="text-[9px] md:text-[8px] lg:text-[10px] font-black uppercase tracking-[0.3em] lg:tracking-[0.4em] opacity-50 group-hover:text-black/50">
             0{index + 1}
           </div>
         </div>
 
         <div className="flex-1 flex flex-col justify-center overflow-hidden min-h-0">
-          <div className="text-[10px] font-black text-[var(--accent-color)] group-hover:text-black/40 mb-2 tracking-[0.3em] uppercase shrink-0">{project.category}</div>
-          <h3 className="text-2xl lg:text-4xl xl:text-5xl font-black mb-4 uppercase tracking-tighter group-hover:scale-105 transition-transform origin-left leading-[0.9] shrink-0">{project.title}</h3>
-          <p className="hidden lg:line-clamp-2 text-xs lg:text-sm text-[var(--text-secondary)] group-hover:text-black/70 font-mono leading-relaxed max-w-[95%]">
+          <div className="text-[9px] md:text-[8px] lg:text-[10px] font-black text-[var(--accent-color)] group-hover:text-black/40 mb-1 lg:mb-2 tracking-[0.2em] md:tracking-[0.15em] lg:tracking-[0.3em] uppercase shrink-0">{project.category}</div>
+          <h3 className="text-xl md:text-lg lg:text-3xl xl:text-4xl font-black mb-2 md:mb-1 lg:mb-4 uppercase tracking-tighter group-hover:scale-105 transition-transform origin-left leading-[0.9] shrink-0">{project.title}</h3>
+          <p className="line-clamp-2 md:line-clamp-2 lg:line-clamp-3 text-[11px] md:text-[10px] lg:text-xs text-[var(--text-secondary)] group-hover:text-black/70 font-mono leading-relaxed max-w-[95%]">
             {project.description}
           </p>
         </div>
 
-        <div className="hidden lg:block space-y-4 mt-4 shrink-0">
-          <div className="flex flex-wrap gap-2">
-            {project.tech.slice(0, 4).map(t => (
-              <span key={t} className="text-[10px] font-bold border border-[var(--border-color)] group-hover:border-black/20 px-3 py-1.5 rounded-full uppercase tracking-widest bg-[var(--bg-color)] group-hover:bg-transparent transition-all duration-300">
+        {/* Tech stack - responsive */}
+        <div className="space-y-2 lg:space-y-4 mt-2 lg:mt-4 shrink-0">
+          <div className="flex flex-wrap gap-1 md:gap-1 lg:gap-2">
+            {project.tech.slice(0, 3).map(t => (
+              <span key={t} className="text-[8px] md:text-[8px] lg:text-[10px] font-bold border border-[var(--border-color)] group-hover:border-black/20 px-2 md:px-1.5 lg:px-3 py-0.5 md:py-0.5 lg:py-1.5 rounded-full uppercase tracking-wider md:tracking-wide lg:tracking-widest bg-[var(--bg-color)] group-hover:bg-transparent transition-all duration-300">
                 {t}
               </span>
             ))}
-            {project.tech.length > 4 && (
-              <span className="text-[10px] font-bold border border-[var(--border-color)] group-hover:border-black/20 px-3 py-1.5 rounded-full uppercase tracking-widest bg-[var(--bg-color)] group-hover:bg-transparent transition-all duration-300">
-                +{project.tech.length - 4}
+            {project.tech.length > 3 && (
+              <span className="text-[8px] md:text-[8px] lg:text-[10px] font-bold border border-[var(--border-color)] group-hover:border-black/20 px-2 md:px-1.5 lg:px-3 py-0.5 md:py-0.5 lg:py-1.5 rounded-full uppercase tracking-wider md:tracking-wide lg:tracking-widest bg-[var(--bg-color)] group-hover:bg-transparent transition-all duration-300">
+                +{project.tech.length - 3}
               </span>
             )}
           </div>

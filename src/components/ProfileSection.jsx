@@ -138,47 +138,50 @@ export default function ProfileSection() {
   return (
     <section className="h-full w-full flex flex-col justify-center overflow-hidden bg-[var(--bg-color)]">
       <div className="grid md:grid-cols-2 h-full w-full min-h-0">
-        <div className="flex flex-col justify-center px-8 lg:px-24 order-2 md:order-1 h-full py-8 lg:py-12 relative z-10 text-center md:text-left min-h-0 overflow-hidden">
-          <div className="flex items-center justify-center md:justify-start gap-4 mb-6">
-            <div className="text-[var(--accent-color)] text-[10px] font-black tracking-[0.4em] uppercase leading-none">
+        <div className="flex flex-col justify-center px-6 md:px-8 lg:px-24 order-2 md:order-1 h-full py-6 md:py-8 lg:py-12 relative z-10 text-left min-h-0 overflow-hidden">
+          <div className="flex items-center justify-start gap-4 mb-4 md:mb-6">
+            <div className="text-[var(--accent-color)] text-[9px] md:text-[10px] font-black tracking-[0.3em] md:tracking-[0.4em] uppercase leading-none">
               &gt; SYSTEM_READY // HELLO_WORLD
             </div>
           </div>
 
           <div className="space-y-2 mb-4 lg:mb-6">
-            <h1 className="text-6xl lg:text-8xl xl:text-[120px] font-black text-[var(--text-primary)] tracking-tighter uppercase leading-none">
+            <h1 className="text-5xl md:text-5xl lg:text-8xl xl:text-[120px] font-black text-[var(--text-primary)] tracking-tighter uppercase leading-none">
               RJ
             </h1>
-            <div className="text-lg lg:text-2xl xl:text-3xl font-black text-gray-500 tracking-[0.3em] uppercase leading-tight">
+            <div className="text-base md:text-base lg:text-2xl xl:text-3xl font-black text-gray-500 tracking-[0.2em] md:tracking-[0.3em] uppercase leading-tight">
               Software Engineer
             </div>
           </div>
 
-          <p className="max-w-xl mx-auto md:mx-0 text-[var(--text-secondary)] font-mono text-xs lg:text-sm leading-relaxed mb-6 lg:mb-8 tracking-tight">
+          <p className="max-w-xl text-[var(--text-secondary)] font-mono text-[11px] md:text-xs lg:text-sm leading-relaxed mb-4 md:mb-6 lg:mb-8 tracking-tight">
             <span className="text-[var(--text-primary)]">Full-stack software engineer</span> dedicated to <span className="text-[var(--text-primary)] border-b border-[var(--accent-color)]/30">transforming businesses</span> through modern digital solutions. Deep diving in the <span className="text-[var(--accent-color)] font-bold">fintech</span> industry and scalable enterprise infrastructure.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 border-t border-[var(--border-color)] pt-6 lg:pt-8">
-            <div className="group flex flex-col items-center md:items-start gap-1">
-              <div className="text-[8px] text-gray-600 font-black uppercase tracking-[0.4em]">EXPERIENCE</div>
-              <div className="px-3 py-1 bg-[var(--panel-bg)] border border-[var(--border-color)] rounded-md text-[10px] text-[var(--text-primary)] font-black tracking-widest uppercase">
+          <div className="flex flex-wrap items-center justify-start gap-3 md:gap-4 border-t border-[var(--border-color)] pt-4 md:pt-6 lg:pt-8">
+            <div className="group flex flex-col items-start gap-1">
+              <div className="text-[7px] md:text-[8px] text-gray-600 font-black uppercase tracking-[0.3em] md:tracking-[0.4em]">EXPERIENCE</div>
+              <div className="px-2 md:px-3 py-1 bg-[var(--panel-bg)] border border-[var(--border-color)] rounded-md text-[9px] md:text-[10px] text-[var(--text-primary)] font-black tracking-wider md:tracking-widest uppercase">
                 {Math.max(2, new Date().getFullYear() - 2023)}+ CYCLES
               </div>
             </div>
-            <div className="group flex flex-col items-center md:items-start gap-1">
-              <div className="text-[8px] text-gray-600 font-black uppercase tracking-[0.4em]">LOCATION</div>
-              <div className="px-3 py-1 bg-[var(--panel-bg)] border border-[var(--border-color)] rounded-md text-[10px] text-[var(--text-primary)] font-black tracking-widest uppercase">KL // MY</div>
+            <div className="group flex flex-col items-start gap-1">
+              <div className="text-[7px] md:text-[8px] text-gray-600 font-black uppercase tracking-[0.3em] md:tracking-[0.4em]">LOCATION</div>
+              <div className="px-2 md:px-3 py-1 bg-[var(--panel-bg)] border border-[var(--border-color)] rounded-md text-[9px] md:text-[10px] text-[var(--text-primary)] font-black tracking-wider md:tracking-widest uppercase">KL // MY</div>
             </div>
-            <div className="group flex flex-col items-center md:items-start gap-1">
-              <div className="text-[8px] text-gray-600 font-black uppercase tracking-[0.4em]">NODE_STATUS</div>
-              <div className="px-3 py-1 bg-[var(--accent-dim)] border border-[var(--accent-color)]/30 rounded-md text-[10px] text-[var(--accent-color)] font-bold tracking-[0.2em] uppercase animate-pulse flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[var(--accent-color)] rounded-full"></span>
+            <div className="group flex flex-col items-start gap-1">
+              <div className="text-[7px] md:text-[8px] text-gray-600 font-black uppercase tracking-[0.3em] md:tracking-[0.4em]">NODE_STATUS</div>
+              <div className="px-2 md:px-3 py-1 bg-[var(--accent-dim)] border border-[var(--accent-color)]/30 rounded-md text-[9px] md:text-[10px] text-[var(--accent-color)] font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase animate-pulse flex items-center gap-2">
+                <span className="w-1 md:w-1.5 h-1 md:h-1.5 bg-[var(--accent-color)] rounded-full"></span>
                 ACTIVE
               </div>
             </div>
           </div>
         </div>
-        <CatDisplay />
+        {/* ASCII Cat - Hidden on mobile, shown on right side on desktop */}
+        <div className="hidden md:block h-full order-1 md:order-2">
+          <CatDisplay />
+        </div>
       </div>
     </section>
   );

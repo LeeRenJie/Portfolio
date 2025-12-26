@@ -10,28 +10,45 @@ import ProjectsSection from './components/ProjectsSection';
 import StackSection from './components/StackSection';
 import ContactSection from './components/ContactSection';
 import DetailWindow from './components/DetailWindow';
-import { Battery, Clock, Activity, User, Briefcase, Layout, Terminal, Mail } from 'lucide-react';
+import { Battery, Clock, Activity, User, Briefcase, Layout, Terminal, Mail, Fingerprint, X } from 'lucide-react';
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
-// --- CUSTOM CURSOR COMPONENT ---
+// --- CUSTOM CURSOR COMPONENT (optimized with RAF) ---
 function CustomCursor() {
   const dotRef = useRef(null);
 
   useEffect(() => {
     if (!dotRef.current) return;
 
+    let rafId = null;
+    let lastX = 0, lastY = 0;
+
     const onMouseMove = (e) => {
-      dotRef.current.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
+      lastX = e.clientX - 4;
+      lastY = e.clientY - 4;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          if (dotRef.current) {
+            dotRef.current.style.transform = `translate3d(${lastX}px, ${lastY}px, 0)`;
+          }
+          rafId = null;
+        });
+      }
     };
 
-    globalThis.addEventListener('mousemove', onMouseMove);
-    return () => globalThis.removeEventListener('mousemove', onMouseMove);
+    globalThis.addEventListener('mousemove', onMouseMove, { passive: true });
+    return () => {
+      globalThis.removeEventListener('mousemove', onMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
     <div
       ref={dotRef}
+      className="hidden md:block"
       style={{
         position: 'fixed',
         top: 0,
@@ -54,6 +71,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('profile');
   const [modalData, setModalData] = useState(null);
   const [time, setTime] = useState(new Date());
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -75,30 +93,39 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // SCROLL PINNING & SPY LOGIC
+  // SCROLL PINNING & SPY LOGIC (throttled for performance)
   useEffect(() => {
     if (!booted || !scrollContainerRef.current) return;
 
     const scrollContainer = scrollContainerRef.current;
+    let rafId = null;
+    let lastScrollY = 0;
 
-    // SCROLL SPY
+    // SCROLL SPY with RAF throttling
     const handleMainScroll = () => {
-      const scrollY = scrollContainer.scrollTop;
-      const sectionIds = ['profile', 'work', 'projects', 'stack', 'contact'];
-      let current = 'profile';
-      for (const id of sectionIds) {
-        const el = sections.current[id];
-        if (el && el.offsetTop <= scrollY + 200) {
-          current = id;
-        }
+      lastScrollY = scrollContainer.scrollTop;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          const sectionIds = ['profile', 'work', 'projects', 'stack', 'contact'];
+          let current = 'profile';
+          for (const id of sectionIds) {
+            const el = sections.current[id];
+            if (el && el.offsetTop <= lastScrollY + 200) {
+              current = id;
+            }
+          }
+          if (current !== activeSection) setActiveSection(current);
+          rafId = null;
+        });
       }
-      if (current !== activeSection) setActiveSection(current);
     };
 
-    scrollContainer.addEventListener('scroll', handleMainScroll);
+    scrollContainer.addEventListener('scroll', handleMainScroll, { passive: true });
 
     return () => {
       scrollContainer.removeEventListener('scroll', handleMainScroll);
+      if (rafId) cancelAnimationFrame(rafId);
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, [booted, activeSection]);
@@ -120,7 +147,7 @@ export default function App() {
   const scrollTo = (id) => {
     const el = sections.current[id];
     if (el && scrollContainerRef.current) {
-      // ScrollTrigger sometimes interference with programmatic scroll, we might need to kill triggers briefly or just scroll to progress
+      setMobileMenuOpen(false);
       gsap.to(scrollContainerRef.current, {
         scrollTop: el.offsetTop,
         duration: 1,
@@ -179,20 +206,64 @@ export default function App() {
               <Activity size={10} className="shrink-0" />
               <span className="translate-y-[0.5px]">NETWORK: OPEN_TO_INNOVATION</span>
             </div>
+            {/* Mobile Logo */}
+            <div className="md:hidden text-[var(--accent-color)] text-[10px] font-black tracking-widest">RJ.OS</div>
           </div>
 
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-4 text-[10px] font-black tracking-[0.2em] uppercase">
+            <div className="hidden md:flex items-center gap-4 text-[10px] font-black tracking-[0.2em] uppercase">
               <div className="w-1.5 h-1.5 bg-[var(--accent-color)] rounded-full animate-pulse shadow-[0_0_10px_var(--accent-color)]"></div>
               <span className="hidden sm:inline text-[var(--text-primary)]">RJ.OS v4.1.2</span>
             </div>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden w-10 h-10 rounded-full border border-[var(--accent-color)]/30 flex items-center justify-center text-[var(--accent-color)] hover:bg-[var(--accent-dim)] transition-all"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X size={18} /> : <Fingerprint size={18} />}
+            </button>
           </div>
         </div>
       </header>
 
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-[99] md:hidden">
+          <button
+            className="absolute inset-0 bg-black/70 backdrop-blur-xl"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
+          />
+          <div className="absolute top-16 right-0 w-full h-[calc(100%-4rem)] flex flex-col items-center justify-center gap-2 p-8">
+            {menuItems.map((item, index) => {
+              const isActive = activeSection === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollTo(item.id)}
+                  className={`w-full max-w-xs py-4 px-6 rounded-2xl flex items-center gap-4 transition-all duration-300 ${
+                    isActive
+                      ? 'bg-[var(--accent-color)] text-black'
+                      : 'bg-[var(--panel-bg)] border border-[var(--border-color)] text-[var(--text-secondary)] hover:border-[var(--accent-color)] hover:text-[var(--accent-color)]'
+                  }`}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className={isActive ? 'text-black' : ''}>{item.icon}</div>
+                  <span className="font-black text-xs tracking-widest uppercase">{item.id}</span>
+                  {isActive && (
+                    <div className="ml-auto w-2 h-2 bg-black rounded-full"></div>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       <div className="flex-1 flex overflow-hidden pt-16">
-        {/* 2. FIXED SIDEBAR */}
-        <div className="w-0 md:w-32 flex flex-col items-center justify-center h-full z-10 shrink-0 border-r border-[var(--border-color)] bg-[var(--panel-bg)]/50">
+        {/* 2. FIXED SIDEBAR - Hidden on mobile, visible on md+ */}
+        <div className="sidebar-nav w-32 flex-col items-center justify-center h-full z-10 shrink-0 border-r border-[var(--border-color)] bg-[var(--panel-bg)]/50">
           <div className="bg-[var(--panel-bg)] border border-[var(--border-color)] rounded-full py-8 px-3 relative flex flex-col gap-4 shadow-xl">
             <div
               ref={sidebarMarkerRef}
@@ -246,25 +317,26 @@ export default function App() {
           </div>
 
           {/* 4. FIXED STATUS BAR */}
-          <div className="h-16 w-full px-12 flex items-center justify-between border-t border-[var(--border-color)] bg-[var(--panel-bg)] z-40 text-[10px] text-gray-500 uppercase tracking-widest font-black shrink-0">
-            <div className="flex gap-8 items-center truncate">
-              <span className="text-[var(--accent-color)] flex items-center gap-3">
-                <div className="w-1.5 h-1.5 bg-[var(--accent-color)] rounded-full shadow-[0_0_8px_var(--accent-color)] animate-pulse"></div>
-                UPLINK_UPTIME: {calculateAge()}
+          <div className="h-12 md:h-16 w-full px-4 md:px-8 lg:px-12 flex items-center justify-between border-t border-[var(--border-color)] bg-[var(--panel-bg)] z-40 text-[8px] md:text-[10px] text-gray-500 uppercase tracking-wider md:tracking-widest font-black shrink-0">
+            <div className="flex gap-4 md:gap-6 lg:gap-8 items-center">
+              <span className="text-[var(--accent-color)] flex items-center gap-2 md:gap-3">
+                <div className="w-1 md:w-1.5 h-1 md:h-1.5 bg-[var(--accent-color)] rounded-full shadow-[0_0_8px_var(--accent-color)] animate-pulse"></div>
+                <span className="hidden lg:inline">UPLINK_UPTIME:</span> {calculateAge()}
               </span>
-              <div className="h-4 w-[1px] bg-[var(--border-color)] hidden sm:block"></div>
-              <span className="flex items-center gap-2 text-green-500/50">
+              <div className="h-4 w-[1px] bg-[var(--border-color)] hidden lg:block"></div>
+              <span className="hidden lg:flex items-center gap-2 text-green-500/50">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_#22c55e]"></div>
                 SIGNAL_ACTIVE
               </span>
             </div>
 
-            <div className="flex gap-4 items-center shrink-0">
-              <div className="flex items-center gap-3 border border-[var(--border-color)] px-6 py-2 rounded-full bg-[var(--bg-color)]">
-                <Clock size={12} className="text-[var(--accent-color)]" />
+            <div className="flex gap-2 md:gap-3 lg:gap-4 items-center shrink-0">
+              <div className="flex items-center gap-2 md:gap-3 border border-[var(--border-color)] px-3 md:px-4 lg:px-6 py-1.5 md:py-2 rounded-full bg-[var(--bg-color)]">
+                <Clock size={10} className="text-[var(--accent-color)] md:hidden" />
+                <Clock size={12} className="text-[var(--accent-color)] hidden md:block" />
                 <span className="text-[var(--text-secondary)]">{time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false })}</span>
               </div>
-              <div className="hidden xs:flex items-center gap-3 border border-[var(--border-color)] px-6 py-2 rounded-full bg-[var(--bg-color)] text-green-500">
+              <div className="hidden lg:flex items-center gap-3 border border-[var(--border-color)] px-6 py-2 rounded-full bg-[var(--bg-color)] text-green-500">
                 <Battery size={12} /> 100%
               </div>
             </div>

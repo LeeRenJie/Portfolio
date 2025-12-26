@@ -102,9 +102,9 @@ export default function ContactSection() {
         </div>
 
         {/* MOBILE VIEW - Horizontal File Stack with Icon Selector */}
-        <div className="md:hidden flex-1 flex flex-col">
+        <div className="md:hidden flex flex-col">
           {/* Icon selector row - same contrast theme */}
-          <div className="flex justify-start gap-2 mb-10 shrink-0">
+          <div className="flex justify-start gap-2 mb-6 shrink-0">
             {links.map((link, idx) => {
               const IconComponent = link.icon;
               const isActive = activeCardIndex === idx;
@@ -125,8 +125,8 @@ export default function ContactSection() {
           </div>
 
           {/* Stacked files area */}
-          <div className="flex-1 flex items-start justify-start relative">
-            <div className="relative w-full h-[240px]">
+          <div className="flex-1 flex items-center justify-start relative min-h-0">
+            <div className="relative w-full aspect-[4/3] max-h-[300px]">
               {links.map((link, idx) => {
                 const IconComponent = link.icon;
                 const isActive = activeCardIndex === idx;

@@ -148,11 +148,14 @@ export default function App() {
     const el = sections.current[id];
     if (el && scrollContainerRef.current) {
       setMobileMenuOpen(false);
-      gsap.to(scrollContainerRef.current, {
-        scrollTop: el.offsetTop,
-        duration: 1,
-        ease: "power2.inOut"
-      });
+      // Delay scroll slightly to allow menu close animation
+      setTimeout(() => {
+        gsap.to(scrollContainerRef.current, {
+          scrollTop: el.offsetTop,
+          duration: 0.8,
+          ease: "power2.inOut"
+        });
+      }, 100);
     }
   };
 

@@ -87,18 +87,18 @@ const SkillBar = ({ name, level }) => {
   const partialFill = ((level / 100) * blocks) % 1; // Get the decimal part
 
   return (
-    <div className="space-y-3 group w-full">
-      <div className="flex justify-between items-end">
-        <div className="text-[10px] font-black tracking-[0.3em] text-[var(--accent-color)] uppercase flex items-center gap-2">
-          <span className="w-1.5 h-1.5 bg-[var(--accent-color)] rounded-full animate-pulse"></span>
-          {name}
+    <div className="space-y-2 md:space-y-3 group w-full">
+      <div className="flex justify-between items-end gap-1">
+        <div className="text-[8px] md:text-[10px] font-black tracking-[0.15em] md:tracking-[0.3em] text-[var(--accent-color)] uppercase flex items-center gap-1 md:gap-2 truncate">
+          <span className="w-1 md:w-1.5 h-1 md:h-1.5 bg-[var(--accent-color)] rounded-full animate-pulse shrink-0"></span>
+          <span className="truncate">{name}</span>
         </div>
-        <div className="text-[9px] text-[var(--text-secondary)] font-bold uppercase tracking-widest group-hover:text-[var(--text-primary)] transition-colors">
+        <div className="hidden md:block text-[9px] text-[var(--text-secondary)] font-bold uppercase tracking-widest group-hover:text-[var(--text-primary)] transition-colors shrink-0">
           STATUS: {getSkillStatus(level)}
         </div>
       </div>
 
-      <div className="flex gap-1.5">
+      <div className="flex gap-1 md:gap-1.5">
         {Array.from({ length: blocks }, (_, i) => {
           let fillPercentage = 0;
 
@@ -190,7 +190,7 @@ export default function StackSection() {
 
           return (
             <>
-              <div className={`grid grid-cols-1 md:grid-cols-2 ${gridCols} gap-x-6 md:gap-x-12 gap-y-6 md:gap-y-10 items-start content-start`}>
+              <div className={`grid grid-cols-2 ${gridCols} gap-x-4 md:gap-x-12 gap-y-4 md:gap-y-10 items-start content-start`}>
                 {skills.map((skill) => (
                   <div
                     key={skill.name}

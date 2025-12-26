@@ -1,0 +1,5 @@
+name = "rjcodes"
+compatibility_date = "2025-12-26"
+
+[site]
+bucket = "./dist"

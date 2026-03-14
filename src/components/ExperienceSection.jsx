@@ -4,8 +4,22 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 const experiences = [
   {
     company: "Arkmind Sdn. Bhd.",
+    role: "Software Engineer",
+    period: "Mar 2026 — Present",
+    location: "Puchong, MY",
+    highlights: [
+      "Part of the team building a salary deduction personal finance loan platform, enabling government employees to apply for loans with automated salary deduction repayment.",
+      "Developed DCRIS, a credit reporting platform for licensed moneylenders under AoDL, flagging duplicate borrower applications across lenders to reduce lending risk.",
+      "Led product direction and development for CredMatch alongside the CEO, building a lead generation marketplace that routes rejected borrower profiles to licensed moneylenders on a per-lead revenue model.",
+      "Revamped the Arkmind corporate landing page using Astro and Tailwind CSS, improving site performance and SEO.",
+      "Restructured the personal loan product codebase into a Turborepo monorepo, streamlining development across shared packages."
+    ],
+    tech: ["Next.js", "React", "TypeScript", "Node.js", "Prisma", "MySQL", "TailwindCSS", "Astro", "Turborepo"]
+  },
+  {
+    company: "Arkmind Sdn. Bhd.",
     role: "Associate Software Developer",
-    period: "Nov 2024 — Present",
+    period: "Nov 2024 — Feb 2026",
     location: "Puchong, MY",
     highlights: [
       "Focused primarily on a Loan Management System digitizing the hire purchase loan process for motorcycles.",
@@ -132,7 +146,7 @@ export default function ExperienceSection() {
             >
               {experiences.map((exp, idx) => (
                 <button
-                  key={exp.company}
+                  key={`${exp.company}-${exp.role}`}
                   onClick={() => openMobileModal(exp)}
                   className="flex-shrink-0 w-full snap-start bg-[var(--panel-bg)] border border-[var(--border-color)] rounded-2xl p-5 text-left transition-all active:scale-[0.98] active:border-[var(--accent-color)]"
                 >
@@ -265,7 +279,7 @@ export default function ExperienceSection() {
           <div className="flex-col w-44 lg:w-56 overflow-y-auto no-scrollbar bg-[var(--panel-bg)]/50 border-r border-[var(--border-color)] shrink-0 hidden md:flex">
             {experiences.map((exp, idx) => (
               <button
-                key={exp.company}
+                key={`${exp.company}-${exp.role}`}
                 onClick={() => setActiveIndex(idx)}
                 className={`text-left px-4 lg:px-8 py-4 lg:py-6 border-b border-[var(--border-color)] transition-all duration-300 font-mono text-[10px] lg:text-[11px] relative overflow-hidden group shrink-0 ${activeIndex === idx
                     ? 'bg-[var(--accent-color)] text-black'

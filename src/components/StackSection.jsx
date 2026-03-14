@@ -12,6 +12,8 @@ const skillCategories = [
       { name: "Redux", level: 85, projects: ["CredMatch", "Codeo App"] },
       { name: "Ant Design", level: 88, projects: ["CredMatch"] },
       { name: "TailwindCSS", level: 92, projects: ["Hireti", "Codeo Landing", "redCASH"] },
+      { name: "Astro", level: 75, projects: ["Arkmind Landing Page"] },
+      { name: "Vite", level: 72, projects: ["Portfolio", "Internal Tooling"] },
       { name: "Pug", level: 45, projects: ["Sigma Studios Landing"] }
     ]
   },
@@ -52,7 +54,10 @@ const skillCategories = [
     category: "AI & Automation",
     skills: [
       { name: "Prompt Engineering", level: 95, projects: ["AI-Powered Workflows"] },
-      { name: "Claude Code", level: 95, projects: ["Rapid Development"] },
+      { name: "Claude Code", level: 95, projects: ["Arkmind Landing Page", "Portfolio", "Rapid Development"] },
+      { name: "Lovable", level: 80, projects: ["Rapid Prototyping"] },
+      { name: "V0", level: 75, projects: ["UI Generation"] },
+      { name: "n8n", level: 70, projects: ["Workflow Automation"] },
       { name: "Respond.io", level: 88, projects: ["Customer Automation | Villa Customer Communication Workflow"] }
     ]
   },
@@ -60,11 +65,12 @@ const skillCategories = [
     category: "Tools & Analytics",
     skills: [
       { name: "GitHub", level: 95, projects: ["Version Control", "Collaboration"] },
-      { name: "VS Code", level: 80, projects: ["Primary IDE"] },
+      { name: "Cursor", level: 85, projects: ["Primary IDE", "AI-Assisted Development"] },
       { name: "Postman", level: 70, projects: ["API Testing"] },
       { name: "GA4", level: 50, projects: ["User Analytics"] },
       { name: "GTM", level: 50, projects: ["Event Tracking"] },
       { name: "WordPress", level: 85, projects: ["Arkmind Website", "AoDL Website", "Other Freelance Projects"] },
+      { name: "Turborepo", level: 75, projects: ["Arkmind Monorepo"] },
       { name: "Termius", level: 90, projects: ["SSH Management"] },
       { name: "Jest", level: 70, projects: ["Codeo App Testing, Arkmind Related Projects"] },
       { name: "SonarQube", level: 75, projects: ["Code Quality Scanning, Arkmind Related Projects"] }

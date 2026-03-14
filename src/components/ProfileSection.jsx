@@ -155,7 +155,7 @@ export default function ProfileSection() {
           </div>
 
           <p className="max-w-xl text-[var(--text-secondary)] font-mono text-[11px] md:text-xs lg:text-sm leading-relaxed mb-4 md:mb-6 lg:mb-8 tracking-tight">
-            <span className="text-[var(--text-primary)]">Full-stack software engineer</span> dedicated to <span className="text-[var(--text-primary)] border-b border-[var(--accent-color)]/30">transforming businesses</span> through modern digital solutions. Deep diving in the <span className="text-[var(--accent-color)] font-bold">fintech</span> industry and scalable enterprise infrastructure.
+            <span className="text-[var(--text-primary)]">Software engineer</span> with 2 years of experience building <span className="text-[var(--accent-color)] font-bold">fintech</span> platforms in React, TypeScript, and Node.js. Shipping loan management systems, origination platforms, and lead generation products for licensed moneylenders across Malaysia. Secret bias for <span className="text-[var(--text-primary)] border-b border-[var(--accent-color)]/30">clean front-end experiences</span> with sharp design and smooth animations.
           </p>
 
           <div className="flex flex-wrap items-center justify-start gap-3 md:gap-4 border-t border-[var(--border-color)] pt-4 md:pt-6 lg:pt-8">

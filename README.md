@@ -53,3 +53,26 @@ This repository is open-source and intended for educational and personal use.
 ---
 **ORIGINAL_ARCHITECT**: [Lee Ren Jie](https://github.com/LeeRenJie)
 **SYSTEM_STATUS**: STABLE // v2.1.0
+
+
+### Recent Articles 📖
+<!-- BLOG-POST-LIST:START -->
+- [Why Every Student Should Join Hackathons - [FreeCodeCamp]](https://www.freecodecamp.org/news/why-every-student-should-join-hackathons/)
+- [How to Excel as a New Developer and Beat the Dunning-Kruger Trap - [FreeCodeCamp]](https://www.freecodecamp.org/news/the-dunning-kruger-effect/)
+- [Git for beginners - [Hashnode]](https://leerenjie.hashnode.dev/git-for-beginners)
+- [GitHub for Beginners. What is it & How to use it? - [Hashnode]](https://leerenjie.hashnode.dev/github-for-beginners)
+- [Day 6: Growing with Open Source - [Hashnode]](https://leerenjie.hashnode.dev/growing-with-open-source)
+- [Top 5 Reasons Why I Blog - [Hashnode]](https://leerenjie.hashnode.dev/top-5-reasons-why-i-blog)
+- [Day 5: Building an Effective Developer Portfolio - [Hashnode]](https://leerenjie.hashnode.dev/building-an-effective-developer-portfolio)
+- [Day 4: Several Revenue Models for Software Engineers - [Hashnode]](https://leerenjie.hashnode.dev/several-revenue-models-for-software-engineers)
+- [Importance Of LinkedIn For Tech Students - [Hashnode]](https://leerenjie.hashnode.dev/importance-of-linkedin-for-tech-students-1)
+- [Building a Portfolio Website (My Plan) - [Hashnode]](https://leerenjie.hashnode.dev/building-a-portfolio-website)
+- [Day 3: Stand Out by Building a Personal Brand - [Hashnode]](https://leerenjie.hashnode.dev/stand-out-by-building-a-personal-brand)
+- [Does Your University Sponsor Courses on Coursera? - [Hashnode]](https://leerenjie.hashnode.dev/does-your-university-sponsor-courses-on-coursera)
+- [Power of SASS - [Hashnode]](https://leerenjie.hashnode.dev/power-of-sass)
+- [Day 2: Developer Blogging & Online Presence - [Hashnode]](https://leerenjie.hashnode.dev/developer-blogging-and-online-presence)
+- [Day 1:  How to Ship Articles Faster - [Hashnode]](https://leerenjie.hashnode.dev/how-to-ship-articles-faster)
+- [Wave Animation for Words - [Hashnode]](https://leerenjie.hashnode.dev/wave-animation-for-words)
+- [Get Your GitHub Student Developer Pack - [Hashnode]](https://leerenjie.hashnode.dev/get-your-github-student-developer-pack)
+- [13 Tips For Freshmen Pursuing Tech - [Hashnode]](https://leerenjie.hashnode.dev/13-tips-for-freshmen-pursuing-tech)
+<!-- BLOG-POST-LIST:END -->

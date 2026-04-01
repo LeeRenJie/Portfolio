@@ -79,12 +79,12 @@ const skillCategories = [
 ];
 
 const getSkillStatus = (level) => {
-  if (level >= 95) return 'CRITICAL SYSTEMS';
-  if (level >= 90) return 'COMBAT READY';
-  if (level >= 85) return 'MISSION CAPABLE';
-  if (level >= 75) return 'OPERATIONAL';
-  if (level >= 65) return 'FUNCTIONAL';
-  return 'LIMITED';
+  if (level >= 95) return 'Expert';
+  if (level >= 90) return 'Advanced';
+  if (level >= 85) return 'Proficient';
+  if (level >= 75) return 'Familiar';
+  if (level >= 65) return 'Comfortable';
+  return 'Learning';
 };
 
 const SkillBar = ({ name, level }) => {
@@ -100,7 +100,7 @@ const SkillBar = ({ name, level }) => {
           <span className="truncate">{name}</span>
         </div>
         <div className="hidden md:block text-[9px] text-[var(--text-secondary)] font-bold uppercase tracking-widest group-hover:text-[var(--text-primary)] transition-colors shrink-0">
-          STATUS: {getSkillStatus(level)}
+          {getSkillStatus(level)}
         </div>
       </div>
 
@@ -150,12 +150,12 @@ SkillBar.propTypes = {
 export default function StackSection() {
   const [activeCategory, setActiveCategory] = useState("Frontend");
   const categorySubtitles = {
-    "Frontend": "FRAMEWORK_ANALYSIS // UI_ENGINE",
-    "Backend": "SERVER_CORES // API_PROTOCOLS",
-    "Database": "DATA_STORAGE // SCHEMA_SYNC",
-    "DevOps & Testing": "CI_CD_PIPELINE // QUALITY_CONTROL",
-    "Automation": "WORKFLOW_LOGIC // AGENTIC_SYSTEMS",
-    "Utility": "UTILITY_GEAR // DEV_ENVIRONMENT"
+    "Frontend": "Frameworks & UI",
+    "Backend": "Server & APIs",
+    "Database": "Data Storage",
+    "DevOps & Infrastructure": "CI/CD & Cloud",
+    "AI & Automation": "Workflows & Automation",
+    "Tools & Analytics": "Dev Tools & Analytics"
   };
 
   return (
@@ -163,9 +163,9 @@ export default function StackSection() {
       <div className="w-full flex flex-col h-full lg:min-h-[calc(100vh-8rem)] py-8 md:py-12 lg:py-8 px-4 md:px-12 lg:px-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-4 lg:pb-3 mb-4 md:mb-6 lg:mb-4 border-b border-[var(--border-color)] gap-3 md:gap-4 shrink-0">
           <div>
-            <h2 className="text-2xl md:text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase leading-none">System Specs</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase leading-none">Skills</h2>
             <div className="text-[9px] md:text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.2em] md:tracking-[0.3em] uppercase">
-              {categorySubtitles[activeCategory] || "Module_Mapping // Version_Control"}
+              {categorySubtitles[activeCategory] || "Technologies"}
             </div>
           </div>
 
@@ -207,7 +207,7 @@ export default function StackSection() {
                     {/* Deep Dive Tooltip - Hidden on mobile, shown on desktop hover */}
                     <div className="absolute top-[100%] left-0 w-full z-50 mt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 hidden md:block">
                       <div className="bg-[var(--panel-bg)] border border-[var(--accent-color)]/30 p-4 rounded-2xl shadow-2xl relative">
-                        <div className="text-[9px] text-[var(--accent-color)] mb-2 font-black tracking-widest uppercase opacity-50">Deployed In:</div>
+                        <div className="text-[9px] text-[var(--accent-color)] mb-2 font-black tracking-widest uppercase opacity-50">Used in:</div>
                         <div className="flex flex-wrap gap-2">
                           {skill.projects.map(p => (
                             <span key={p} className="text-[10px] text-[var(--text-primary)] border-l border-[var(--accent-color)] pl-2 opacity-80">
@@ -240,7 +240,7 @@ export default function StackSection() {
                 </div>
                 <div className="w-px h-6 bg-[var(--border-color)]"></div>
                 <div className="flex items-center gap-3">
-                  <span className="text-[9px] text-[var(--text-secondary)] uppercase tracking-widest">Critical Systems</span>
+                  <span className="text-[9px] text-[var(--text-secondary)] uppercase tracking-widest">Expert Level</span>
                   <span className="text-lg font-black text-[var(--accent-color)]">{criticalCount}</span>
                 </div>
               </div>

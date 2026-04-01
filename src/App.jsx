@@ -10,7 +10,8 @@ import ProjectsSection from './components/ProjectsSection';
 import StackSection from './components/StackSection';
 import ContactSection from './components/ContactSection';
 import DetailWindow from './components/DetailWindow';
-import { Battery, Clock, Activity, User, Briefcase, Layout, Terminal, Mail, Fingerprint, X } from 'lucide-react';
+import { Battery, Clock, Activity, User, Briefcase, Layout, Terminal, Mail, Fingerprint, X, BookOpen } from 'lucide-react';
+import BlogsSection from './components/BlogsSection';
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
@@ -107,7 +108,7 @@ export default function App() {
 
       if (!rafId) {
         rafId = requestAnimationFrame(() => {
-          const sectionIds = ['profile', 'work', 'projects', 'stack', 'contact'];
+          const sectionIds = ['profile', 'work', 'projects', 'stack', 'blog', 'contact'];
           let current = 'profile';
           for (const id of sectionIds) {
             const el = sections.current[id];
@@ -133,7 +134,7 @@ export default function App() {
   // Sidebar Pill Animation
   useEffect(() => {
     if (!booted || !sidebarMarkerRef.current) return;
-    const links = ['profile', 'work', 'projects', 'stack', 'contact'];
+    const links = ['profile', 'work', 'projects', 'stack', 'blog', 'contact'];
     const index = links.indexOf(activeSection);
 
     animate(sidebarMarkerRef.current, {
@@ -168,11 +169,12 @@ export default function App() {
   }
 
   const menuItems = [
-    { id: 'profile', icon: <User size={20} /> },
-    { id: 'work', icon: <Briefcase size={20} /> },
-    { id: 'projects', icon: <Layout size={20} /> },
-    { id: 'stack', icon: <Terminal size={20} /> },
-    { id: 'contact', icon: <Mail size={20} /> }
+    { id: 'profile',  label: 'Profile',   icon: <User size={20} /> },
+    { id: 'work',     label: 'Experience', icon: <Briefcase size={20} /> },
+    { id: 'projects', label: 'Projects',  icon: <Layout size={20} /> },
+    { id: 'stack',    label: 'Skills',    icon: <Terminal size={20} /> },
+    { id: 'blog',     label: 'Writing',   icon: <BookOpen size={20} /> },
+    { id: 'contact',  label: 'Contact',   icon: <Mail size={20} /> }
   ];
 
   // --- Dynamic Age Calculator ---
@@ -207,7 +209,7 @@ export default function App() {
           <div className="flex items-center gap-4 sm:gap-8">
             <div className="hidden md:flex items-center gap-3 bg-[var(--accent-dim)] px-4 py-1.5 rounded-full border border-[var(--accent-color)]/10 text-[var(--accent-color)] leading-none text-[9px] font-black uppercase tracking-widest">
               <Activity size={10} className="shrink-0" />
-              <span className="translate-y-[0.5px]">NETWORK: OPEN_TO_INNOVATION</span>
+              <span className="translate-y-[0.5px]">Open to opportunities</span>
             </div>
             {/* Mobile Logo */}
             <div className="md:hidden text-[var(--accent-color)] text-[10px] font-black tracking-widest">RJ.OS</div>
@@ -216,7 +218,7 @@ export default function App() {
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-4 text-[10px] font-black tracking-[0.2em] uppercase">
               <div className="w-1.5 h-1.5 bg-[var(--accent-color)] rounded-full animate-pulse shadow-[0_0_10px_var(--accent-color)]"></div>
-              <span className="hidden sm:inline text-[var(--text-primary)]">RJ.OS v4.1.2</span>
+              <span className="hidden sm:inline text-[var(--text-primary)]">Lee Ren Jie</span>
             </div>
             {/* Mobile Menu Button */}
             <button
@@ -253,7 +255,7 @@ export default function App() {
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <div className={isActive ? 'text-black' : ''}>{item.icon}</div>
-                  <span className="font-black text-xs tracking-widest uppercase">{item.id}</span>
+                  <span className="font-black text-xs tracking-widest uppercase">{item.label}</span>
                   {isActive && (
                     <div className="ml-auto w-2 h-2 bg-black rounded-full"></div>
                   )}
@@ -288,7 +290,7 @@ export default function App() {
 
                   <div className={`sidebar-tooltip ${isActive ? 'opacity-100 translate-x-0' : ''}`}>
                     <span className="mr-2 text-black font-black">&gt;&gt;</span>
-                    {item.id.toUpperCase()}
+                    {item.label}
                   </div>
                 </button>
               );
@@ -314,6 +316,9 @@ export default function App() {
             <div id="stack" ref={el => sections.current['stack'] = el} className="snap-section">
               <StackSection />
             </div>
+            <div id="blog" ref={el => sections.current['blog'] = el} className="snap-section">
+              <BlogsSection />
+            </div>
             <div id="contact" ref={el => sections.current['contact'] = el} className="snap-section">
               <ContactSection />
             </div>
@@ -324,12 +329,12 @@ export default function App() {
             <div className="flex gap-4 md:gap-6 lg:gap-8 items-center">
               <span className="text-[var(--accent-color)] flex items-center gap-2 md:gap-3">
                 <div className="w-1 md:w-1.5 h-1 md:h-1.5 bg-[var(--accent-color)] rounded-full shadow-[0_0_8px_var(--accent-color)] animate-pulse"></div>
-                <span className="hidden lg:inline">UPLINK_UPTIME:</span> {calculateAge()}
+                <span className="hidden lg:inline">Age:</span> {calculateAge()}
               </span>
               <div className="h-4 w-[1px] bg-[var(--border-color)] hidden lg:block"></div>
               <span className="hidden lg:flex items-center gap-2 text-green-500/50">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_#22c55e]"></div>
-                SIGNAL_ACTIVE
+                Online
               </span>
             </div>
 

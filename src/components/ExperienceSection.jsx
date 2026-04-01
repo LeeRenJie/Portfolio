@@ -117,7 +117,7 @@ export default function ExperienceSection() {
     const container = mobileScrollRef.current;
     const scrollLeft = container.scrollLeft;
     const containerWidth = container.clientWidth;
-    const gap = 16; // gap-4 = 1rem = 16px
+    const gap = 16;
     const newIndex = Math.round(scrollLeft / (containerWidth + gap));
     if (newIndex !== mobileIndex && newIndex >= 0 && newIndex < experiences.length) {
       setMobileIndex(newIndex);
@@ -129,14 +129,13 @@ export default function ExperienceSection() {
       <div className="w-full h-full lg:min-h-[calc(100vh-8rem)] flex flex-col py-8 md:py-12 lg:py-8 px-4 md:px-12 lg:px-20">
         <div className="flex items-end justify-between pb-4 lg:pb-3 mb-4 md:mb-6 lg:mb-4 border-b border-[var(--border-color)] shrink-0">
           <div>
-            <h2 className="text-2xl md:text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase">Deployment Log</h2>
-            <div className="text-[9px] md:text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.2em] md:tracking-[0.3em] uppercase">SYSTEM_CHRONOLOGY // ALL_RECORDS_ACTIVE</div>
+            <h2 className="text-2xl md:text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase">Experience</h2>
+            <div className="text-[9px] md:text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.2em] md:tracking-[0.3em] uppercase">Career History // {experiences.length} Roles</div>
           </div>
         </div>
 
-        {/* MOBILE VIEW - Horizontal Scrollable Carousel */}
+        {/* MOBILE VIEW */}
         <div className="md:hidden flex-1 flex flex-col">
-          {/* Carousel Container */}
           <div className="flex-1 flex items-center overflow-hidden">
             <div
               ref={mobileScrollRef}
@@ -150,17 +149,15 @@ export default function ExperienceSection() {
                   onClick={() => openMobileModal(exp)}
                   className="flex-shrink-0 w-full snap-start bg-[var(--panel-bg)] border border-[var(--border-color)] rounded-2xl p-5 text-left transition-all active:scale-[0.98] active:border-[var(--accent-color)]"
                 >
-                  {/* Record number badge */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="px-3 py-1 bg-[var(--accent-color)] text-black text-[8px] font-black tracking-widest rounded-full">
-                      REC_0{idx + 1}
+                      {String(idx + 1).padStart(2, '0')}
                     </div>
                     <div className="text-[8px] text-[var(--text-secondary)] font-bold tracking-wider uppercase">
                       {exp.location}
                     </div>
                   </div>
 
-                  {/* Role & Company */}
                   <div className="mb-4">
                     <h3 className="text-lg font-black text-[var(--text-primary)] uppercase tracking-tight leading-tight mb-2">
                       {exp.role}
@@ -170,7 +167,6 @@ export default function ExperienceSection() {
                     </div>
                   </div>
 
-                  {/* Date */}
                   <div className="flex items-center gap-2 mb-4 pb-4 border-b border-[var(--border-color)]">
                     <div className="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_6px_#22c55e]"></div>
                     <div className="text-[10px] text-[var(--text-secondary)] font-bold tracking-widest uppercase">
@@ -178,7 +174,6 @@ export default function ExperienceSection() {
                     </div>
                   </div>
 
-                  {/* Tech stack preview */}
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {exp.tech.slice(0, 4).map(t => (
                       <span key={t} className="px-2 py-1 bg-[var(--bg-color)] border border-[var(--border-color)] rounded-full text-[8px] text-[var(--text-secondary)] font-bold uppercase">
@@ -190,9 +185,8 @@ export default function ExperienceSection() {
                     )}
                   </div>
 
-                  {/* Tap hint */}
                   <div className="flex items-center justify-center gap-2 text-[9px] text-[var(--accent-color)] font-black tracking-widest uppercase">
-                    <span>TAP_FOR_DETAILS</span>
+                    <span>Tap for details</span>
                     <span>&gt;&gt;</span>
                   </div>
                 </button>
@@ -200,7 +194,6 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          {/* Navigation Controls - Same style as Projects section */}
           <div className="flex items-center justify-between pt-4 border-t border-[var(--border-color)] shrink-0">
             <button
               onClick={() => scrollMobile('prev')}
@@ -211,9 +204,8 @@ export default function ExperienceSection() {
                   : 'border-[var(--accent-color)] text-[var(--accent-color)]'
               }`}
             >
-              PREVIOUS_LOG
+              Previous
             </button>
-
             <button
               onClick={() => scrollMobile('next')}
               disabled={mobileIndex === experiences.length - 1}
@@ -223,7 +215,7 @@ export default function ExperienceSection() {
                   : 'border-[var(--accent-color)] text-[var(--accent-color)]'
               }`}
             >
-              NEXT_LOG
+              Next
             </button>
           </div>
         </div>
@@ -232,7 +224,7 @@ export default function ExperienceSection() {
         {mobileModalOpen && selectedExp && (
           <div className="md:hidden fixed inset-0 z-[200] bg-black/95 backdrop-blur-xl flex flex-col">
             <div className="flex items-center justify-between p-4 border-b border-[var(--border-color)]">
-              <div className="text-[10px] text-[var(--accent-color)] font-bold tracking-widest uppercase">DEPLOYMENT_DETAILS</div>
+              <div className="text-[10px] text-[var(--accent-color)] font-bold tracking-widest uppercase">Details</div>
               <button
                 onClick={closeMobileModal}
                 className="w-8 h-8 rounded-full border border-[var(--border-color)] flex items-center justify-center text-[var(--text-secondary)]"
@@ -248,7 +240,7 @@ export default function ExperienceSection() {
               </div>
 
               <div>
-                <div className="text-[9px] text-[var(--text-secondary)] font-bold tracking-widest uppercase mb-3 opacity-50">Mission_Highlights</div>
+                <div className="text-[9px] text-[var(--text-secondary)] font-bold tracking-widest uppercase mb-3 opacity-50">Highlights</div>
                 <ul className="space-y-3">
                   {selectedExp.highlights.map((h, i) => (
                     <li key={i} className="text-xs text-[var(--text-secondary)] leading-relaxed flex items-start gap-3">
@@ -260,7 +252,7 @@ export default function ExperienceSection() {
               </div>
 
               <div>
-                <div className="text-[9px] text-[var(--text-secondary)] font-bold tracking-widest uppercase mb-3 opacity-50">Stack_Used</div>
+                <div className="text-[9px] text-[var(--text-secondary)] font-bold tracking-widest uppercase mb-3 opacity-50">Stack</div>
                 <div className="flex flex-wrap gap-2">
                   {selectedExp.tech.map(t => (
                     <span key={t} className="px-3 py-1 bg-[var(--panel-bg)] border border-[var(--border-color)] rounded-full text-[10px] text-[var(--text-secondary)] font-bold uppercase">
@@ -273,9 +265,8 @@ export default function ExperienceSection() {
           </div>
         )}
 
-        {/* DESKTOP VIEW - Original tabbed layout */}
+        {/* DESKTOP VIEW */}
         <div className="hidden md:flex flex-row gap-0 flex-1 overflow-hidden">
-          {/* Nav - Narrower on tablet, wider on desktop */}
           <div className="flex-col w-44 lg:w-56 overflow-y-auto no-scrollbar bg-[var(--panel-bg)]/50 border-r border-[var(--border-color)] shrink-0 hidden md:flex">
             {experiences.map((exp, idx) => (
               <button
@@ -287,7 +278,7 @@ export default function ExperienceSection() {
                   }`}
               >
                 <div className="flex flex-col">
-                  <span className={`text-[8px] lg:text-[9px] mb-1 font-bold ${activeIndex === idx ? 'text-black/50' : 'text-[var(--accent-color)]/50'}`}>0{idx + 1}</span>
+                  <span className={`text-[8px] lg:text-[9px] mb-1 font-bold ${activeIndex === idx ? 'text-black/50' : 'text-[var(--accent-color)]/50'}`}>{String(idx + 1).padStart(2, '0')}</span>
                   <span className="font-black uppercase tracking-wider lg:tracking-widest text-[9px] lg:text-[11px]">{exp.company}</span>
                 </div>
                 {activeIndex === idx && (
@@ -297,10 +288,9 @@ export default function ExperienceSection() {
             ))}
           </div>
 
-          {/* Content */}
           <div className="flex-1 bg-transparent p-6 lg:p-12 relative overflow-hidden flex flex-col">
             <div className="absolute top-10 lg:top-20 right-10 lg:right-20 text-[80px] lg:text-[120px] font-black text-[var(--accent-color)] opacity-5 select-none uppercase tracking-tighter leading-none pointer-events-none">
-              REC_{activeIndex + 1}
+              {String(activeIndex + 1).padStart(2, '0')}
             </div>
 
             <div className="relative z-10 fade-in flex flex-col h-full min-h-0" key={activeIndex}>
@@ -325,7 +315,7 @@ export default function ExperienceSection() {
 
                 <div className="space-y-4 lg:space-y-6 self-start sticky top-0 hidden lg:block">
                   <div>
-                    <div className="text-[9px] lg:text-[10px] text-[var(--text-secondary)] font-black uppercase tracking-widest mb-2 lg:mb-3 opacity-50">Stack_Used</div>
+                    <div className="text-[9px] lg:text-[10px] text-[var(--text-secondary)] font-black uppercase tracking-widest mb-2 lg:mb-3 opacity-50">Stack</div>
                     <div className="flex flex-wrap gap-1.5 lg:gap-2">
                       {experiences[activeIndex].tech.map(t => (
                         <span key={t} className="px-2 lg:px-3 py-1 bg-[var(--bg-color)] border border-[var(--border-color)] rounded-full text-[var(--text-secondary)] text-[9px] lg:text-[10px] font-bold hover:bg-[var(--accent-color)] hover:text-black hover:border-[var(--accent-color)] transition-all duration-300 cursor-default">

@@ -52,21 +52,21 @@ export default function DetailWindow({ data, onClose }) {
             <div className="grid grid-cols-1 gap-3 md:gap-4">
               {data.link ? (
                 <a href={data.link} target="_blank" rel="noreferrer" className="flex items-center justify-center py-3 md:py-6 bg-[var(--accent-color)] text-black rounded-full text-[9px] md:text-xs font-black tracking-widest hover:bg-[var(--text-primary)] hover:text-[var(--bg-color)] transition-all shadow-xl">
-                  ACCESS_LIVE_INSTANCE <ChevronRight size={14} className="ml-2" />
+                  View Live <ChevronRight size={14} className="ml-2" />
                 </a>
               ) : (
                 <div className="flex items-center justify-center py-3 md:py-6 bg-[var(--panel-bg)]/50 text-[var(--text-secondary)] opacity-40 rounded-full text-[9px] md:text-xs font-black tracking-widest cursor-not-allowed border border-[var(--border-color)] uppercase">
-                  DEPL_LINK_DISABLED
+                  Link Not Available
                 </div>
               )}
 
               {data.github ? (
                 <a href={data.github} target="_blank" rel="noreferrer" className="flex items-center justify-center py-3 md:py-6 border border-[var(--border-color)] text-[var(--text-primary)] rounded-full text-[9px] md:text-xs font-black tracking-widest hover:border-[var(--accent-color)] transition-all">
-                  VIEW_SOURCE_CODE
+                  View Source Code
                 </a>
               ) : (
                 <div className="flex items-center justify-center py-3 md:py-6 border border-red-500/10 bg-red-500/5 text-red-500/40 rounded-full text-[9px] md:text-xs font-black tracking-widest cursor-not-allowed uppercase italic text-center">
-                  PRIVATE_REPOSITORY
+                  Private Repository
                 </div>
               )}
             </div>
@@ -74,7 +74,7 @@ export default function DetailWindow({ data, onClose }) {
 
           <div className="space-y-6 md:space-y-10">
             <div>
-              <div className="text-[9px] md:text-[10px] text-[var(--text-secondary)] opacity-50 font-black uppercase tracking-widest mb-3 md:mb-6 border-b border-[var(--border-color)] pb-2">Integrated_Tech</div>
+              <div className="text-[9px] md:text-[10px] text-[var(--text-secondary)] opacity-50 font-black uppercase tracking-widest mb-3 md:mb-6 border-b border-[var(--border-color)] pb-2">Tech Stack</div>
               <div className="flex flex-wrap gap-1.5 md:gap-3">
                 {data.tech.map(t => (
                   <span key={t} className="px-3 py-1 md:px-5 md:py-2 bg-[var(--bg-color)] border border-[var(--border-color)] rounded-full text-[var(--text-secondary)] text-[9px] md:text-[11px] font-bold hover:bg-[var(--accent-color)] hover:text-black hover:border-[var(--accent-color)] transition-all duration-300 cursor-default">
@@ -87,7 +87,7 @@ export default function DetailWindow({ data, onClose }) {
               <div className="text-[9px] md:text-[10px] text-[var(--text-secondary)] opacity-50 font-black uppercase tracking-widest mb-3 md:mb-6 border-b border-[var(--border-color)] pb-2">Status</div>
               <div className="text-[10px] md:text-xs text-green-500 font-black uppercase flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_#22c55e]"></div>
-                DEPLOYMENT_STABLE
+                Live
               </div>
             </div>
           </div>

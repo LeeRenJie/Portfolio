@@ -30,3 +30,10 @@ temp/
 # OS specific files
 Thumbs.db
 db.json
+
+# Script dependencies
+scripts/node_modules/
+scripts/package-lock.json
+
+# Claude Code
+.claude/

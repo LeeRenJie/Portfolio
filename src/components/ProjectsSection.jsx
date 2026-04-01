@@ -6,7 +6,7 @@ const projects = [
     id: 'arkhp',
     title: 'ArkHP',
     category: 'FINTECH_SYSTEM',
-    status: 'DEPLOYED_STABLE',
+    status: 'Live',
     description: 'Digitized the hire purchase process for motorcycles/cars in Malaysia for BH Capital/Carsome Capital, improving application efficiency and compliance.',
     tech: ['React', 'TypeScript', 'TailwindCSS', 'Node.js', 'MySQL', 'Prisma', 'SonarQube', 'Jest'],
     metrics: {
@@ -34,7 +34,7 @@ const projects = [
     id: 'redcash',
     title: 'redCASH',
     category: 'PRODUCT_LANDING',
-    status: 'DEPLOYED_STABLE',
+    status: 'Live',
     description: 'Delivered frontend development for product landing pages, including an Islamic financing variant, supporting successful product launch for thousands of borrowers.',
     tech: ['React', 'TailwindCSS', 'TypeScript'],
     metrics: {
@@ -62,7 +62,7 @@ const projects = [
     id: 'arkcash-whitelabel',
     title: 'ArkCash',
     category: 'FINTECH_VARIANTS',
-    status: 'ACTIVE_MAINTENANCE',
+    status: 'In Progress',
     description: 'Implemented frontend and backend enhancements, resolved bugs, and supported feature rollouts across multiple fintech product variants.',
     tech: ['React', 'TypeScript', 'Node.js', '.NET'],
     metrics: {
@@ -76,7 +76,7 @@ const projects = [
     id: 'aodl-website',
     title: 'AoDL WP',
     category: 'CORPORATE_WEB',
-    status: 'DEPLOYED_STABLE',
+    status: 'Live',
     description: 'Developed and maintained the official WordPress site for the Association of Digital Lenders, representing KPKT-licensed lenders in Malaysia.',
     tech: ['WordPress', 'CSS'],
     metrics: {
@@ -104,7 +104,7 @@ const projects = [
     id: 'hireti',
     title: 'Hireti',
     category: 'HACKATHON_WINNER',
-    status: 'LEGACY_ARCHIVE',
+    status: 'Archive',
     description: 'Built Hireti, a talent management system for Hilti IT Competition 2024. Won Grand Champion out of 1,000+ teams globally.',
     tech: ['Next.js', 'AWS', 'TailwindCSS', 'TypeScript'],
     metrics: {
@@ -118,7 +118,7 @@ const projects = [
     id: 'verifymy',
     title: 'VerifyMy',
     category: 'HACKATHON_PROTOTYPE',
-    status: 'LEGACY_ARCHIVE',
+    status: 'Archive',
     description: 'Prototyped a digital identity platform with blockchain and biometric authentication for secure government e-services at USM Varsity Hackathon 2023.',
     tech: ['Next.js', 'Blockchain', 'Biometric Auth'],
     metrics: {
@@ -132,7 +132,7 @@ const projects = [
     id: 'codeo-app',
     title: 'Codeo Mobile App',
     category: 'MOBILE_EDU',
-    status: 'LEGACY_ARCHIVE',
+    status: 'Archive',
     description: 'Developed lesson features and app screens using React Native, Redux, NativeBase, Hasura, Apollo GraphQL, and Expo.',
     tech: ['React Native', 'Redux', 'NativeBase', 'Hasura', 'Apollo GraphQL', 'Expo'],
     metrics: {
@@ -146,7 +146,7 @@ const projects = [
     id: 'codeo-landing',
     title: 'Codeo Landing Page',
     category: 'WEB_MARKETING',
-    status: 'LEGACY_ARCHIVE',
+    status: 'Archive',
     description: 'Spearheaded development of the landing page with HTML5, TailwindCSS, Tilt.js, Flowbite, JQuery, and JavaScript, achieving Lighthouse score of 100.',
     tech: ['TailwindCSS', 'JavaScript', 'HTML5', 'Tilt.js', 'Flowbite'],
     metrics: {
@@ -160,7 +160,7 @@ const projects = [
     id: 'jobbuddy',
     title: 'JobBuddy',
     category: 'OPEN_SOURCE',
-    status: 'LEGACY_ARCHIVE',
+    status: 'Archive',
     description: 'Led open-source Discord hiring bot project, connecting employers with community talent through the Coden Discord server.',
     tech: ['Discord.js', 'Node.js', 'MongoDB'],
     metrics: {
@@ -274,12 +274,12 @@ export default function ProjectsSection({ onOpenModal }) {
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-4 lg:pb-3 mb-4 md:mb-6 lg:mb-4 border-b border-[var(--border-color)] shrink-0 gap-4">
           <div className="flex flex-col md:flex-row md:items-end gap-4 lg:gap-8">
             <div>
-              <h2 className="text-2xl md:text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase">Operational Archive</h2>
-              <div className="text-[9px] md:text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.2em] md:tracking-[0.3em] uppercase">REPOSITORY_SCAN // {projects.length}_MODULES_ACTIVE</div>
+              <h2 className="text-2xl md:text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase">Projects</h2>
+              <div className="text-[9px] md:text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.2em] md:tracking-[0.3em] uppercase">Selected Work // {projects.length} Projects</div>
             </div>
             <div className="text-[10px] text-[var(--text-secondary)] font-mono hidden lg:block uppercase tracking-widest leading-relaxed border-l border-[var(--border-color)] pl-6 opacity-50">
-              UPLINK_STABLE<br />
-              <span className="opacity-30">ARCHIVE: 0{projects.length}</span>
+              All Projects<br />
+              <span className="opacity-30">{projects.length} Total</span>
             </div>
           </div>
 
@@ -293,7 +293,7 @@ export default function ProjectsSection({ onOpenModal }) {
                 : 'border-[var(--border-color)] text-[var(--text-secondary)] opacity-10 cursor-not-allowed'
                 }`}
             >
-              PREVIOUS_LOG
+              Previous
             </button>
             <button
               onClick={() => scroll('right')}
@@ -303,7 +303,7 @@ export default function ProjectsSection({ onOpenModal }) {
                 : 'border-[var(--border-color)] text-[var(--text-secondary)] opacity-10 cursor-not-allowed'
                 }`}
             >
-              NEXT_LOG
+              Next
             </button>
           </div>
         </div>
@@ -332,7 +332,7 @@ export default function ProjectsSection({ onOpenModal }) {
               : 'border-[var(--border-color)] text-[var(--text-secondary)] opacity-30'
               }`}
           >
-            PREVIOUS_LOG
+            Previous
           </button>
           <button
             onClick={() => scroll('right')}
@@ -342,7 +342,7 @@ export default function ProjectsSection({ onOpenModal }) {
               : 'border-[var(--border-color)] text-[var(--text-secondary)] opacity-30'
               }`}
           >
-            NEXT_LOG
+            Next
           </button>
         </div>
       </div>
@@ -351,10 +351,10 @@ export default function ProjectsSection({ onOpenModal }) {
 }
 
 function getStatusClasses(status) {
-  if (status === 'ACTIVE_UPLINK') {
+  if (status === 'Active') {
     return 'border-green-500 text-green-500 group-hover:border-black group-hover:text-black';
   }
-  if (status === 'LEGACY_ARCHIVE') {
+  if (status === 'Archive') {
     return 'border-orange-500/50 text-orange-500 group-hover:border-black group-hover:text-black';
   }
   return 'border-[var(--accent-color)] text-[var(--accent-color)] group-hover:border-black group-hover:text-black';
@@ -372,7 +372,7 @@ function ProjectItem({ project, index, onClick }) {
         <div className="flex justify-between items-start mb-2 md:mb-1 lg:mb-4 shrink-0">
           <div className="space-y-1 lg:space-y-2 hidden md:hidden lg:block">
             <div className="text-[8px] lg:text-[9px] font-black uppercase tracking-[0.3em] lg:tracking-[0.4em] opacity-30 group-hover:text-black/30">
-              LIFECYCLE_STATUS
+              Status
             </div>
             <div className={`text-[9px] lg:text-[10px] font-black uppercase tracking-widest px-2 lg:px-3 py-1 border rounded-full inline-block ${getStatusClasses(project.status)}`}>
               {project.status}

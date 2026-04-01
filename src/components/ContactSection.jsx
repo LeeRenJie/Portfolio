@@ -96,8 +96,8 @@ export default function ContactSection() {
       <div className="w-full flex flex-col h-full lg:min-h-[calc(100vh-8rem)] py-8 md:py-12 lg:py-8 px-4 md:px-12 lg:px-20">
         <div className="flex justify-between items-end border-b border-[var(--border-color)] pb-4 lg:pb-3 mb-4 md:mb-6 lg:mb-4 shrink-0">
           <div>
-            <h2 className="text-2xl md:text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase leading-none">External Uplinks</h2>
-            <div className="text-[9px] md:text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.2em] md:tracking-[0.3em] uppercase">Communication_Channels // Active</div>
+            <h2 className="text-2xl md:text-3xl lg:text-2xl font-bold text-[var(--text-primary)] tracking-tight uppercase leading-none">Contact</h2>
+            <div className="text-[9px] md:text-[10px] text-[var(--accent-color)] mt-2 font-mono tracking-[0.2em] md:tracking-[0.3em] uppercase">Get in Touch // All Channels</div>
           </div>
         </div>
 
@@ -162,7 +162,7 @@ export default function ContactSection() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-lg font-black text-[var(--text-primary)] leading-tight mb-0.5 truncate">{link.display}</div>
-                        <div className="text-[9px] text-[var(--text-secondary)] uppercase tracking-wider">{link.name}_UPLINK</div>
+                        <div className="text-[9px] text-[var(--text-secondary)] uppercase tracking-wider">{link.name}</div>
                       </div>
                     </div>
 
@@ -173,7 +173,7 @@ export default function ContactSection() {
                     {/* Link preview */}
                     <div className="flex-1 flex items-end">
                       <div className="w-full py-2 px-3 rounded-lg bg-[var(--bg-color)] border border-[var(--border-color)] mt-2">
-                        <div className="text-[8px] text-[var(--text-secondary)] uppercase tracking-widest opacity-50 mb-1">ENDPOINT</div>
+                        <div className="text-[8px] text-[var(--text-secondary)] uppercase tracking-widest opacity-50 mb-1">Link</div>
                         <div className="text-[10px] text-[var(--accent-color)] font-mono truncate">{link.link.replace('mailto:', '').replace('https://', '')}</div>
                       </div>
                     </div>
@@ -186,7 +186,7 @@ export default function ContactSection() {
                       className="w-full py-2.5 rounded-lg text-[9px] font-black tracking-widest uppercase flex items-center justify-center gap-2 transition-all active:scale-95 bg-[var(--accent-color)] text-black mt-2"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      ACCESS_UPLINK <ExternalLink size={11} />
+                      Visit <ExternalLink size={11} />
                     </a>
                   </div>
                 );
@@ -232,7 +232,7 @@ export default function ContactSection() {
 
           {/* Signal Strength Box - Large screens only */}
           <div className="hidden lg:flex p-6 items-center justify-center border-b border-[var(--border-color)] bg-[var(--accent-dim)]">
-            <div className="text-xl font-black text-[var(--accent-color)] tracking-tighter opacity-20">SIGNAL_STRENGTH: 100%</div>
+            <div className="text-xl font-black text-[var(--accent-color)] tracking-tighter opacity-20">Always open to a conversation</div>
           </div>
         </div>
       </div>

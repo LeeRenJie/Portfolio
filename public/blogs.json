@@ -1,5 +1,12 @@
 [
   {
+    "title": "How to Build a Headless WordPress Frontend with Astro SSR on Cloudflare Pages",
+    "brief": "This tutorial shows you how to run WordPress as a headless CMS with an Astro frontend deployed to Cloudflare Pages. For a project I was recently working on, the requirement was to use WordPress as the",
+    "link": "https://www.freecodecamp.org/news/how-to-build-a-headless-wordpress-frontend-with-astro-ssr-on-cloudflare-pages/",
+    "pubDate": "Mon, 20 Apr 2026 17:07:58 +0000",
+    "source": "FreeCodeCamp"
+  },
+  {
     "title": "Why Every Student Should Join Hackathons",
     "brief": "After graduation, I noticed many fresh grads struggling to land jobs. It wasn’t because they lacked effort or qualifications. The real issue was that what we learn in university doesn’t fully match what employers are looking for. Now, with the rise o...",
     "link": "https://www.freecodecamp.org/news/why-every-student-should-join-hackathons/",

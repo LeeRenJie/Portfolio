@@ -57,6 +57,7 @@ This repository is open-source and intended for educational and personal use.
 
 ### Recent Articles 📖
 <!-- BLOG-POST-LIST:START -->
+- [How I Tested Malaysia's Open Data Portals with Plain English - [FreeCodeCamp]](https://www.freecodecamp.org/news/how-i-tested-malaysia-s-open-data-portals-with-plain-english/)
 - [How to Build a Headless WordPress Frontend with Astro SSR on Cloudflare Pages - [FreeCodeCamp]](https://www.freecodecamp.org/news/how-to-build-a-headless-wordpress-frontend-with-astro-ssr-on-cloudflare-pages/)
 - [Why Every Student Should Join Hackathons - [FreeCodeCamp]](https://www.freecodecamp.org/news/why-every-student-should-join-hackathons/)
 - [How to Excel as a New Developer and Beat the Dunning-Kruger Trap - [FreeCodeCamp]](https://www.freecodecamp.org/news/the-dunning-kruger-effect/)

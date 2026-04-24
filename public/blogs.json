@@ -1,5 +1,12 @@
 [
   {
+    "title": "How I Tested Malaysia's Open Data Portals with Plain English",
+    "brief": "Most end-to-end test suites drive a real browser and click through an app like a user. They check whether a page renders and whether elements appear. But they don't check whether the numbers on those",
+    "link": "https://www.freecodecamp.org/news/how-i-tested-malaysia-s-open-data-portals-with-plain-english/",
+    "pubDate": "Thu, 23 Apr 2026 23:37:22 +0000",
+    "source": "FreeCodeCamp"
+  },
+  {
     "title": "How to Build a Headless WordPress Frontend with Astro SSR on Cloudflare Pages",
     "brief": "This tutorial shows you how to run WordPress as a headless CMS with an Astro frontend deployed to Cloudflare Pages. For a project I was recently working on, the requirement was to use WordPress as the",
     "link": "https://www.freecodecamp.org/news/how-to-build-a-headless-wordpress-frontend-with-astro-ssr-on-cloudflare-pages/",
